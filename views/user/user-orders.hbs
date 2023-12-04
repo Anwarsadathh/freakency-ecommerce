@@ -1,0 +1,820 @@
+
+    
+ 
+        <link
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+        <link rel="stylesheet"
+            href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Oswald'
+            rel='stylesheet' type='text/css'>
+
+    <style>
+    .card {
+        width: 250px;
+        padding: 10px;
+        border-radius: 20px;
+        background: #ff8929;
+        border: none;
+        color: rgb(255, 255, 255);
+        height: 250px;
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center
+    }
+
+
+
+    .card h1 {
+        font-size: 28px;
+        margin-bottom: 0px
+    }
+
+    .card span {
+        font-size: 18px
+    }
+
+    .image {
+        position: absolute;
+        left: 0;
+        top: 0
+    }
+
+    .image2 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    div.dataTables_wrapper div.dataTables_length select {
+    width: 50px;
+    display: inline-block;
+}
+
+
+.profile-container .profile-header .profile-stats .inlinestats-col:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+.profile-container .profile-header .profile-stats .inlinestats-col {
+    padding-top: 15px;
+    text-align: center;
+    font-family: 'Lucida Sans','trebuchet MS',Arial,Helvetica;
+    border-top: 1px solid #eee;
+    min-height: 55px;
+}
+.profile-container .profile-header .profile-stats .stats-col .stats-value {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size:13px;
+    font-family: 'Lucida Sans','trebuchet MS',Arial,Helvetica;
+}
+.pink {
+    color: #1ca555!important;
+}
+.profile-container .profile-header .profile-stats .stats-col:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+.profile-container .profile-header .profile-stats .stats-col {
+    margin: 30px 0;
+    text-align: center;
+}
+.profile-container .profile-header .profile-stats {
+    min-height: 175px;
+    border-right: 1px solid #eee;
+}
+.profile-container .profile-header .profile-info .header-information {
+    line-height: 23px;
+    margin-top: 15px;
+    text-align: justify;
+}
+.profile-container .profile-header .profile-info .btn-follow {
+    position: absolute;
+    top: 45px;
+    right: 40px;
+}
+.btn-palegreen, .btn-palegreen:focus {
+    background-color: #a0d468!important;
+    border-color: #a0d468;
+    color: #fff;
+}
+.profile-container .profile-header .profile-info .header-fullname {
+    font: 30px 'Lucida Sans','trebuchet MS',Arial,Helvetica;
+    margin-top: 27px;
+    display: inline-block;
+}
+.profile-container .profile-header .profile-info {
+    min-height: 175px;
+    border-right: 1px solid #eee;
+    padding: 15px 40px 35px 0;
+}
+.profile-container .profile-header .header-avatar {
+    width: 125px;
+    height: 125px;
+    -webkit-border-radius: 50%;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 50%;
+    -moz-background-clip: padding;
+    border-radius: 50%;
+    background-clip: padding-box;
+    border: 5px solid #f5f5f5;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.15);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.15);
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
+    margin: 25px auto;
+}
+.profile-container .profile-header {
+    min-height: 175px;
+    margin: 15px 15px 0;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.35);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.35);
+    box-shadow: 0 1px 2px rgba(0,0,0,.35);
+    background-color: #fbfbfb;
+}
+
+
+.card{
+	background-color: #fff;
+	width: 280px;
+	border-radius: 33px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 2rem !important;
+}
+.top-container{
+	display: flex;
+	align-items: center;
+}
+.profile-image{
+	border-radius: 10px;
+	border: 2px solid #5957f9;
+}
+.name{
+	font-size: 15px;
+	font-weight: bold;
+	color: #272727;
+	position: relative;
+	top: 8px;
+}
+.mail{
+	font-size: 14px;
+	color: grey;
+	position: relative;
+	top: 2px;
+}
+.middle-container{
+	background-color: #eee;
+	border-radius: 12px;
+
+}
+.middle-container:hover {
+	border: 1px solid #5957f9;
+}
+.dollar-div{
+	background-color: #5957f9;
+	padding: 12px;
+	border-radius: 10px;
+}
+.round-div{
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.dollar{
+	font-size: 16px !important;
+	color: #5957f9 !important;
+	font-weight: bold !important;
+}
+
+
+.current-balance{
+	font-size: 15px;
+	color: #272727;
+	font-weight: bold;
+}
+.amount{
+	color: #5957f9;
+	font-size: 16px;
+	font-weight: bold;
+}
+.dollar-sign{
+	font-size: 16px;
+	color: #272727;
+	font-weight: bold;
+}
+
+.recent-border{
+	border-left: 2px solid #5957f9;
+	display: flex;
+	align-items: center;
+
+}
+.recent-border:hover {
+	border-bottom: 1px solid #dee2e6!important;
+}
+
+.recent-orders{
+	font-size: 16px;
+	font-weight: 700;
+	color: #5957f9;
+	margin-left: 2px;
+}
+
+.wishlist{
+	font-size: 16px;
+	font-weight: 700;
+	color: #272727;
+
+}
+.wishlist-border:hover{
+	border-bottom: 1px solid #dee2e6!important;
+}
+.fashion-studio{
+	font-size: 16px;
+	font-weight: 700;
+	color: #272727;
+}
+.fashion-studio-border:hover {
+	border-bottom: 1px solid #dee2e6!important;
+} */
+
+/* main body */
+
+
+ 
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+
+.main-body{
+    background-color: white;
+    max-width: 810px;
+    margin-right: 20px;
+    border-radius: 33px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-right: auto;
+    margin-left: 60px;
+} 
+
+
+/* main-2 */
+
+
+.main-body {
+    padding: 15px;
+}
+.card {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+.gutters-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.mb-3, .my-3 {
+    margin-bottom: 1rem!important;
+}
+
+.bg-gray-300 {
+    background-color: #e2e8f0;
+}
+.h-100 {
+    height: 100%!important;
+}
+.shadow-none {
+    box-shadow: none!important;
+}
+
+
+
+.round-div{
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.dollar-div{
+	background-color: #5957f9;
+	padding: 12px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.middle-container{
+	background-color: #eee;
+	border-radius: 12px;
+
+}
+
+
+.current-balance{
+	font-size: 15px;
+	color: #272727;
+	font-weight: bold;
+}
+.amount{
+	color: #5957f9;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.dollar-sign{
+	font-size: 16px;
+	color: #272727;
+	font-weight: bold;
+}
+
+.middle-container:hover {
+	border: 1px solid #f7682a;
+}
+.inset{
+	border-style: ridge;
+}
+.welcome-p{
+	font-size: 25px;
+}
+
+.welcome-name{
+	font-size: 30px;
+	color: #f7682a;
+}
+</style>
+  
+             
+                <!-- my account wrapper start -->
+                <div class="my-account-wrapper pb-100 pt-100">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-lg-12 ">
+                                <!-- My Account Page Start -->
+                                <div class="myaccount-page-wrapper">
+                                    <!-- My Account Tab Menu Start -->
+                                    
+                                     
+                                        <!-- My Account Tab Menu End -->
+                                        <!-- My Account Tab Content Start -->
+                                      
+                                            <!-- Single Tab Content End -->
+                                            <!-- Single Tab Content Start -->
+                                            <div class="tab-pane fade show
+                                                active" id="orders"
+                                                role="tabpanel">
+                                                <div class="myaccount-content
+                                                    active">
+                                                    <h3>Orders</h3>
+                                                    <div class="myaccount-table
+                                                        table-responsive
+                                                        text-center">
+                                                        <table id="example"
+                                                            class="table
+                                                            table-bordered"
+                                                            style="width:100%">
+                                                            <thead
+                                                                class="thead-light">
+                                                                <tr>
+                                                                    <th>Order</th>
+                                                                    <th>Name</th>
+                                                                    <th>Date</th>
+                                                                    <th>Status</th>
+                                                                    <th>Total</th>
+                                                                    <th>Payment
+                                                                        Method</th>
+                                                                    <th>Action</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {{#each orders}}
+                                                                <tr>
+                                                                    <td>{{inc
+                                                                        @index}}</td>
+                                                                    <td>{{this.deliveryDetails.Name}}</td>
+                                                                    <td
+                                                                        class="d-inline-block
+                                                                        text-truncate"
+                                                                        style="max-width:
+                                                                        150px;">{{this.date}}</td>
+                                                                    <td><span
+                                                                            id="{{this._id}}">{{this.status}}</span>
+                                                                    </td>
+                                                                    <td>{{this.totalAmount}}</td>
+                                                                    <td>{{this.PaymentMethod}}</td>
+                                                                    <td><a
+                                                                            href="/view-order-products?id={{this._id}}"
+                                                                            class="check-btn
+                                                                            sqr-btn
+                                                                            ">View</a></td>
+                                                                    <td>
+                                                                        {{#if_eq
+                                                                        this.status
+                                                                        "Cancelled"}}
+                                                                        <p
+                                                                            class="text-danger">Cancelled</p>
+                                                                        {{/if_eq}}
+                                                                        {{#if_eq
+                                                                        this.status
+                                                                        "Delivered"}}
+                                                                        <button
+                                                                            class="btn-sm
+                                                                            btn-info"
+                                                                            onclick="returnOrder('{{this._id}}','{{this.totalAmount}}')">Return</button>
+                                                                        {{/if_eq}}
+                                                                        {{!--
+                                                                        {{else}}
+                                                                        --}}
+                                                                        {{#if_eq
+                                                                        this.status
+                                                                        "placed"}}
+                                                                        <button
+                                                                            class="btn-sm
+                                                                            btn-danger"
+                                                                            onclick="cancelOrderUser('{{this._id}}')">Cancel</button>
+                                                                        {{/if_eq}}
+                                                                        {{#if_eq
+                                                                        this.status
+                                                                        "Shipped"}}
+                                                                        <button
+                                                                            class="btn-sm
+                                                                            btn-danger"
+                                                                            onclick="cancelOrderUser('{{this._id}}')">Cancel</button>
+                                                                        {{/if_eq}}
+                                                                        {{#if_eq
+                                                                        this.status
+                                                                        "Returned"}}
+                                                                        <p
+                                                                            class="text-success">Returned</p>
+                                                                        {{/if_eq}}
+                                                                    </td>
+                                                                </tr>
+                                                                {{/each}}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Single Tab Content End -->
+                                            <!-- Single Tab Content Start -->
+                                            <div class="tab-pane fade"
+                                                id="download" role="tabpanel">
+                                                <div class="myaccount-content">
+                                                    <h3>Address</h3>
+                                                    <div class="myaccount-table
+                                                        table-responsive
+                                                        text-center">
+                                                        <table class="table
+                                                            table-bordered">
+                                                            <thead
+                                                                class="thead-light">
+                                                                <tr>
+                                                                    <th>S-No:</th>
+                                                                    <th>Address</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {{#each
+                                                                details}}
+                                                                <tr>
+                                                                    <td>{{
+                                                                        @index}}</td>
+                                                                    <td
+                                                                        style="text-align:
+                                                                        left;">
+                                                                        {{this.name}}
+                                                                        <br>
+                                                                        {{this.address}}
+                                                                        <br>
+                                                                        {{this.pincode}}
+                                                                        <br>
+                                                                        {{this.state}}
+                                                                        <br>
+                                                                        {{this.city}}
+                                                                        <br>
+                                                                        {{this.number}}
+                                                                        <br>
+                                                                    </td>
+                                                                    <td><a
+                                                                            href="/edit-address/{{this.id}}"
+                                                                            class="check-btn
+                                                                            sqr-btn"><i
+                                                                                class="fa
+                                                                                fa-edit">
+                                                                            </i>
+                                                                            Edit
+                                                                        </a>
+                                                                        <br><br>
+                                                                        {{!-- <a
+                                                                            href="/delete-address/{{this.id}}"
+                                                                            class="view">
+                                                                            --}}
+                                                                            <button
+                                                                                type="button"
+                                                                                class="btn
+                                                                                btn-outline-danger"
+                                                                                onclick="deleteAddress('{{this.id}}')">
+                                                                                delete</button></td>
+                                                                    </tr>
+                                                                    {{/each}}
+                                                                </tbody>
+                                                                <a
+                                                                    href="/add-address"
+                                                                    class="check-btn
+                                                                    sqr-btn "><i
+                                                                        class="fa
+                                                                        fa-edit"></i>
+                                                                    Add Address</a>
+                                                            </table>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{!-- <a href="/add-address"><button
+                                                        class="btn btn-info
+                                                        mb-3"
+                                                        style="float:right;">Add
+                                                        Address</button></a>
+                                                --}}
+
+                                                <!-- Single Tab Content End -->
+                                                <!-- Single Tab Content Start -->
+                                                <div class="tab-pane fade"
+                                                    id="payment-method"
+                                                    role="tabpanel">
+                                                    <div
+                                                        class="myaccount-content
+                                                        col-12 col-md-12
+                                                        col-sm-6">
+                                                        <h3>Available Coupons</h3>
+                                                        <div class=" container
+                                                            gap-1"
+                                                            style="display:
+                                                            flex; flex-wrap:
+                                                            wrap;">
+                                                            {{#each coupon}}
+                                                            <div class="d-flex
+                                                                card
+                                                                text-center">
+                                                                <div
+                                                                    class="image"><img
+                                                                        src="/User/images/logo/sale_6172022_2_02-removebg-preview.png"
+                                                                        width="40">
+                                                                </div>
+                                                                <div
+                                                                    class="image2">
+                                                                </div>
+                                                                <h1
+                                                                    class="text-white">{{this.value}}%
+                                                                    <span>off</span></h1>
+                                                                <p
+                                                                    class="text-white"></p>
+                                                                <span
+                                                                    class="d-block">{{this.name}}
+                                                                </span>
+                                                                <p>Valid till:
+                                                                    {{this.endingdate}}</p>
+                                                                <div class="mn"><small>With
+                                                                        Code :
+                                                                        <span>
+                                                                            <b>
+                                                                                <p
+                                                                                    class="text-white"
+                                                                                    id='p1{{this._id}}'>
+                                                                                    {{this.code}}</p>
+                                                                            </b></span>
+                                                                    </small>
+                                                                    {{!-- <input
+                                                                        type="text"
+                                                                        value="{{this.code}}"
+                                                                        id="token"
+                                                                        hidden>
+                                                                    --}}
+                                                                    <center>
+                                                                        {{!--
+                                                                        {{#if
+                                                                        data}}
+                                                                        --}}
+                                                                        {{!--
+                                                                        <p>Already
+                                                                            used</p>
+                                                                        --}}
+                                                                        {{!--
+                                                                        {{else}}
+                                                                        --}}
+                                                                        {{#if
+                                                                        couponUsed}}
+                                                                        <p
+                                                                            class="text-dark">Coupon
+                                                                            Already
+                                                                            Used</p>
+                                                                        {{else}}
+                                                                        <button
+                                                                            class="btn-sm
+                                                                            btn-outline-dark"
+                                                                            onclick="
+                                                                            copyToClipboard('#p1{{this._id}}')">Copy
+                                                                            Coupon
+                                                                            Code
+                                                                        </button>
+                                                                        {{/if}}
+                                                                        {{!--
+                                                                        {{/if}}
+                                                                        --}}
+                                                                    </center>
+                                                                </div>
+                                                            </div>
+
+                                                            {{/each}}
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                                <!-- Single Tab Content End -->
+                                                <!-- Single Tab Content Start -->
+                                             
+                                                
+                                            </div>
+                                        </div> <!-- My Account Tab Content End -->
+                                    </div>
+                                </div> <!-- My Account Page End -->
+                            </div>
+                       
+              
+
+
+            <!-- All JS is here -->
+            <script src="/javascripts/ajax.js"></script>
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+            <script
+                src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <!-- MDB -->
+           <script
+              type="text/javascript"
+               src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+            <script
+                src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script
+                src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+            <script
+                src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+            <script
+                src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+            <!-- Main JS -->
+            
+     
+        <script>
+    function copyToClipboard(element, Id) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+  alertify.set('notifier','position', 'top-center');
+ alertify.success('Coupon copied to clipbaord! ');
+    }
+</script>
+        <script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+
+    function cancelOrderUser(proId) {
+    
+   
+    swal({
+        title: "Order cancel",
+        text: "Once cancel, the order get cancelled",
+        icon: "info",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+            $.ajax({
+                url: '/order-cancel/' + proId,
+                method: 'get',
+                success: (response) => {
+                   
+                    if(response){
+                        document.getElementById(proId).innerHTML = "cancelled"
+                        swal("order cancelled", "sucessfully", "success");
+                      
+                        location.reload()
+                    
+                    }
+                       
+        
+                
+                    
+                    
+                }
+            })
+        } else {
+          swal("Your order safe");
+        }
+      })
+
+}
+function returnOrder(orderId,amount){
+
+    $.ajax({
+        url:'/returnproduct ',
+        method:'post',
+        data:{
+            orderId,
+            amount
+
+        },
+        success:(response)=>{
+
+
+
+            alertify.set('notifier','position', '');
+            alertify.success('Products returned successfully...!!! : ' + alertify.get('notifier','position'));
+             location.reload()
+
+        }
+    })
+}
+
+</script>
+    </html>
+
+    

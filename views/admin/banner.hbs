@@ -1,0 +1,53 @@
+
+   <!-- cropper -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<section>
+ <div class="main-content">
+                <div class="page-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+      <h2 class="text-center">Add Banner</h2>
+<form action="/admin/banner" method="post" enctype="multipart/form-data">
+  
+      <label for="">Title</label>
+      <input type="text" name="Name" class="form-control">
+      
+
+       
+      
+
+       <label for="">Description</label>
+      <input type="text" name="Description" class="form-control">
+
+      <label for="">Image</label>
+      <input  id="file" type="file"  name="image" class="form-control">
+      <div>
+  <img id="image" src="crop.jpg">
+</div>
+   
+<img id="result">
+
+  <button type="submit" class="btn btn-primary mt-4">Submit</button>
+  <a href="/admin/banner" type="submit" class="btn btn-danger mt-4">Cancel</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<script src="/path/to/cdn/jquery.min.js"></script>
+<script src="/path/to/dist/cropper.min.js"></script> 
+<script src="/path/to/dist/jquery-cropper.min.js"></script>
+
+
+<style>
+    img {
+  max-width: 100%;
+}
+</style>

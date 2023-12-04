@@ -1,0 +1,30 @@
+<section>
+ <div class="main-content">
+                <div class="page-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+      <h2 class="text-center">Add Category</h2>
+<form action="/admin/category-add" method="post" enctype="multipart/form-data">
+  {{#if msg}}
+            <h5 class="text-success ml-5 mt-3">{{msg}}</h5>
+            {{/if}}
+      <label for="">Name</label>
+      <input type="text" name="Name" class="form-control">
+      
+
+       <label for="">Description</label>
+      <input type="text" name="Description" class="form-control">
+{{!-- 
+      <label for="">Image</label>
+      <input type="file" name="Image" class="form-control"> --}}
+      
+
+  <button type="submit" class="btn btn-primary mt-4">Submit</button>
+  <a href="/admin/category" type="submit" class="btn btn-danger mt-4">Cancel</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

@@ -1,0 +1,93 @@
+<div class="tab-pane fade"
+                                                    id="payment-method"
+                                                    role="tabpanel">
+                                                    <div
+                                                        class="myaccount-content
+                                                        col-12 col-md-12
+                                                        col-sm-6">
+                                                        <h3>Available Coupons</h3>
+                                                        <div class=" container
+                                                            gap-1"
+                                                            style="display:
+                                                            flex; flex-wrap:
+                                                            wrap;">
+                                                            {{#each coupon}}
+                                                            <div class="d-flex
+                                                                card
+                                                                text-center">
+                                                                <div
+                                                                    class="image"><img
+                                                                        src="/User/images/logo/sale_6172022_2_02-removebg-preview.png"
+                                                                        width="40">
+                                                                </div>
+                                                                <div
+                                                                    class="image2">
+                                                                </div>
+                                                                <h1
+                                                                    class="text-white">{{this.value}}%
+                                                                    <span>off</span></h1>
+                                                                <p
+                                                                    class="text-white"></p>
+                                                                <span
+                                                                    class="d-block">{{this.name}}
+                                                                </span>
+                                                                <p>Valid till:
+                                                                    {{this.endingdate}}</p>
+                                                                <div class="mn"><small>With
+                                                                        Code :
+                                                                        <span>
+                                                                            <b>
+                                                                                <p
+                                                                                    class="text-white"
+                                                                                    id='p1{{this._id}}'>
+                                                                                    {{this.code}}</p>
+                                                                            </b></span>
+                                                                    </small>
+                                                                    {{!-- <input
+                                                                        type="text"
+                                                                        value="{{this.code}}"
+                                                                        id="token"
+                                                                        hidden>
+                                                                    --}}
+                                                                    <center>
+                                                                        {{!--
+                                                                        {{#if
+                                                                        data}}
+                                                                        --}}
+                                                                        {{!--
+                                                                        <p>Already
+                                                                            used</p>
+                                                                        --}}
+                                                                        {{!--
+                                                                        {{else}}
+                                                                        --}}
+                                                                        {{#if
+                                                                        couponUsed}}
+                                                                        <p
+                                                                            class="text-dark">Coupon
+                                                                            Already
+                                                                            Used</p>
+                                                                        {{else}}
+                                                                        <button
+                                                                            class="btn-sm
+                                                                            btn-outline-dark"
+                                                                            onclick="
+                                                                            copyToClipboard('#p1{{this._id}}')">Copy
+                                                                            Coupon
+                                                                            Code
+                                                                        </button>
+                                                                        {{/if}}
+                                                                        {{!--
+                                                                        {{/if}}
+                                                                        --}}
+                                                                    </center>
+                                                                </div>
+                                                            </div>
+
+                                                            {{/each}}
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>

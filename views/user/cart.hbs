@@ -1,0 +1,346 @@
+<!-- shop body section start -->
+    <section class="cart-body mt-100 mb-90 gray-border-top pt-35">
+        <div class="has-breadcrumb-content">
+            <div class="container container-1430">
+                <div class="breadcrumb-content" style="flex-direction: column;">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb p-0 m-0">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                        </ol>
+                    </nav>
+                 <h2 class="cart-title mt-40">Cart</h2>
+                </div>
+
+                <div class="cart-body-content">
+                    <div class="row">
+                        <div class="col-xl-8">
+                            
+                            <div class="product-content">
+                                <form action="#">
+                                    <div class="table-responsive">
+                                        <table class="table table-2">
+                                            <thead>
+                                                
+                                                <tr>
+                                                    <th class="remove-porduct"></th>
+                                                    <th class="product-image"></th>
+                                                    <th class="product-title">Product</th>
+                                                    <th>Price</th>
+                                                    <th class="quantity">Quantity</th>
+                                                    <th class="total">Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each products}}
+                                                <tr>
+                                                    
+                                                    <td>
+                                                         {{!-- <div class="table-data">
+                                                            <a   href="" class="btn btn-danger" onclick="removeCartProduct('{{this._id}}',{{this.product._id}}')" class="close-btn"><i class="fal fa-times"></i></a>
+                                                        </div>  --}}
+                                                        <div>
+                                                         <a class=" delete-button btnn ml-5 close-btn" onclick="removeCartProduct('{{this._id}}','{{this.product._id}}')"><i class="fal fa-times"></i></a>
+          
+                                                      </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table-data">
+                                                            <img src="/product-images/{{this.product._id}}.jpg" width="80" alt="">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table-data">
+                                                            <h6><a href="single-product-3.html" class="title">{{this.product.Name}}</a></h6>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td>
+                                                        <div class="table-data">
+                                                            <span class="price">₹{{this.product.Price}}</span>
+                                                        </div>
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        {{!-- <div class="cart-item-count"> --}}
+                                                                    <button class="cart-item-count mr-3" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)">-</button>
+                                                                <span   id="{{this.product._id}}">{{this.quantity}}</span>
+                                                                <button class="cart-item-count ml-3" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)">+</button>
+                                                        {{!-- </div> --}}
+                                                    </td>
+                                                    <td>
+                                                        <div class="table-data">
+                                                           <span
+                                                        id="a{{this.product._id}}">{{this.subTotal}}</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                               {{/each}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+   
+                                    <div class="cupon">
+                                            <form action="#" method="POST">
+                                                <input type="text" placeholder="Cupon code" class="text-left pl-3" style="margin-right: 20px; width: 119px;">
+                                                <button class="generic-btn border-0 red-hover-btn text-uppercase">Apply Cupon</button>
+                                                <button class="generic-btn border-0 red-hover-btn text-uppercase float-right">Update Cart</button>
+                                            </form>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="cart-widget">
+                                <h4 class="title">Cart Totals</h4>
+                                <table class="table table-2 no-border">
+                                    <tbody>
+                                         {{#each products}}
+                                        <tr>
+                                            <th>Product</th>
+                                            <td>{{this.product.Name}} x {{this.quantity}}</td>
+                                        </tr>
+                                        {{/each}}
+                                        <tr>
+                                            <th>Shipping</th>
+                                            <td>
+                                                <h6>Flat rate</h6>
+                                                <p>Shipping options will be updated during checkout.</p>
+                                                <a href="javascript:void(0)" class="price-calculate">Calculate shipping</a>
+                                                <div class="calculate-shipping-box">
+                                                    <form action="#" method="POST">
+                                                        <div class="form-group">
+                                                            <div class="cart-select">
+                                                                <select name="country" id="country">
+                                                                    <option value="uk">United Kingdom</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" placeholder="Country">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" placeholder="Town / City">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="number" placeholder="Post Code">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <button class="generic-btn border-0 red-hover-btn text-uppercase ">Update</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Total Rs:</th>
+                                            <td><strong><span id="total">{{total}}</span></strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="/checkout" class="mt-40 generic-btn red-hover-btn w-100 d-block" style="height: 50px;">Procced to checkout</a>
+                            </div>
+                            <!-- /. cart widget -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- shop body section end -->
+
+
+
+
+
+    <!-- footer section start -->
+ <!-- footer section start -->
+    <section class="footer">
+        <div class="footer-top mt-120 pb-120 pt-115" style="background-color: #f5f5f5;">
+            <div class="footer-top-wrapper">
+                <div class="newsletter ">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                            <h2 class="title m-0">Sign Up For Our Newsletter</h2>
+                            <p>Subscribe our newsletter and get discount 20% Off</p>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="newsletter-form">
+                                <form action="#" method="POST">
+                                    <input type="text" placeholder="Search for our newsletter...">
+                                    <button type="submit"
+                                        class="generic-btn red-hover-btn text-uppercase float-right">Subscribe
+                                        Now</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.newsletter -->
+                <div class="service pt-57 mt-40 gray-border-top">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-4 col-md-6 service-item">
+                            <div class="service-box service-box-2">
+                                <div class="service-box-content">
+                                    <h4 class="title">Worldwide Shipping</h4>
+                                    <p class="service-desc">Discover seamless global shipping, ensuring your satisfaction with every order.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-md-6 service-item">
+                            <div class="service-box service-box-2">
+                                <div class="service-box-content">
+                                    <h4 class="title">Online Support 24/7</h4>
+                                    <p class="service-desc">Count on our dedicated online support available 24/7 for assistance whenever you need it.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 hidden-md service-item">
+                            <div class="service-box service-box-2">
+                                <div class="service-box-content">
+                                    <h4 class="title">Money Return Guarantee</h4>
+                                    <p class="service-desc">Rest easy with our money-back guarantee for a worry-free shopping experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /. service -->
+                <!-- /. footer bottom -->
+            </div>
+
+        </div>
+        <!-- footer top -->
+
+        <div class="footer-bottom pt-77" style="background-color: #292929;">
+            <div class="container-1180">
+                <div class="footer-bottom-wrapper">
+                    <div class="footer-bottom-primary pb-60">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-5 col-md-9">
+                                <div class="footer-item has-desc">
+                                    <div class="footer-logo mb-25">
+                                        <h2 class="text-white" >Freakency</h2>
+                                    </div>
+                                    <div class="footer-desc">
+                                        <p class="mb-10"> Where Style Meets Expression. Unleash Your Fashion Identity with Every Stitch.
+                                        </p>
+                                    </div>
+                                    <div class="footer-img mt-65">
+                                        <img src="img/logo/paypal.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-7 col-md-12">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                                        <div class="footer-menu">
+                                            <ul>
+                                                <li><a href="javascript:void(0)" class="title">MY ACCOUNT</a></li>
+                                                <li><a href="/userEdit">My account</a></li>
+                                                <li><a href="/checkout">Checkout</a></li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                                        <div class="footer-menu">
+                                            <ul>
+                                                <li><a href="javascript:void(0)" class="title">Quick Links</a></li>
+                                               <li><a href="/shop">Shop</a></li>
+                                                <li><a href="/contact">contact</a></li>
+                                              
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- footer section end -->
+
+<script>
+    function changeQuantity(cartId,proId,userId,count){
+        console.log(userId,'fuhuufhurfhurfhru')
+        let quantity=parseInt(document.getElementById(proId).innerHTML)
+        count=parseInt(count)
+        $.ajax({
+            url:'/change-product-quantity',
+            data:{
+                user:userId,
+                cart:cartId,
+                product:proId,
+                count:count,
+                quantity:quantity
+            },
+            method:'post',
+            success:(response)=>{
+                if(response.removeProduct){
+                alert("product removed from cart")
+                location.reload()
+                }else{
+                     document.getElementById('a' + proId).innerHTML = response.subtotal
+                    document.getElementById(proId).innerHTML=quantity+count
+                    document.getElementById('total').innerHTML=response.total
+                }
+            }
+        })
+    }
+</script>
+
+<script>
+    {{!-- function removeCartProduct(Id,cartId) {
+$.ajax({
+    url:'/cart-remove',
+    method:'post',
+    data:{
+        
+        Id:Id,
+        cartId:cartId
+        
+        
+
+    },
+    success:(response)=>{
+        var notification = alertify.notify('Product deleted', 'success', 5, function(){  console.log('dismissed'); });
+ alertify.set('notifier','position', 'top-center');
+setTimeout(function(){
+   window.location.reload();
+}, 1000);
+
+    }
+})
+} --}}
+ function removeCartProduct(Id,cartId){
+
+			if(confirm("Are you sure?")){
+			
+				$.ajax({
+					url:'/cart-remove',
+					data:{
+						 Id:Id,
+        cartId:cartId
+					},
+					method:'post',
+					success:(response)=>{
+						
+						alert("item  Deleted")
+						location.reload()
+	
+					}
+				})
+			}
+
+		}
+</script>

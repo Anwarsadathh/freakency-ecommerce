@@ -1,0 +1,58 @@
+<section>
+ <div class="main-content">
+                <div class="page-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+      <h2 class="text-center">Add Product</h2>
+<form action="/admin/add-product" method="post" enctype="multipart/form-data">
+  
+      <label for="">Name</label>
+      <input type="text" name="Name" class="form-control">
+      
+
+       
+       <label for="">Offer Price</label>
+      <input type="number" name="OfferPrice" class="form-control col-md-3" required>
+      
+      <label for="">Price</label>
+      <input type="number" name="Price" class="form-control col-md-3" required>
+
+
+ <div class="form-group  ">
+                          <label for="stock" >Stock </label>
+                          <input id="stock" name="stock" type="text" class="form-control validate"   onkeyup="validStock()"/>
+                          <span id="Stock" class="text-danger"></span>
+                        </div>
+                        
+       <label for="">Description</label>
+      <input type="text" name="Description" class="form-control" required>
+
+      <label for="">Image</label>
+      <input type="file" name="image" class="form-control" required>
+      
+      <label for="">Image1</label>
+      <input type="file" name="image1" class="form-control" required>
+      
+      <label for="">Image2</label>
+      <input type="file" name="image2" class="form-control" required>
+      
+      <label for="">Image3</label>
+      <input type="file" name="image3" class="form-control" required>
+
+      <div class="mt-4">
+      <label for="">Category</label>
+      <select name="category" required>
+        {{#each category}}
+        <option value="{{this.Name}}">{{this.Name}}</option>
+        {{/each}}
+      </select>
+</div>
+  <button type="submit" class="btn btn-primary mt-4">Submit</button>
+  <a href="/admin/product-view" type="submit" class="btn btn-danger mt-4">Cancel</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

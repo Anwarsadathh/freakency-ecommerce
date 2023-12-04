@@ -1,0 +1,86 @@
+<section>
+ <div class="main-content">
+                <div class="page-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+      <h2 class="text-center">Edit Product</h2>
+<form action="/admin/edit-product/{{product._id}}" method="post" enctype="multipart/form-data">
+  
+      <label for="">Name</label>
+      <input type="text" name="Name" class="form-control"  value="{{product.Name}}">
+      
+  <div class="mt-4 mb-4">
+      <label for="">Category</label>
+      <select name="category" required>
+        {{#each category}}
+        <option value="{{this.Name}}">{{this.Name}}</option>
+        {{/each}}
+      </select>
+</div>
+       <label for="">Price</label>
+      <input type="number" name="Price" class="form-control" value="{{product.Price}}">
+
+    <label for="">Offer Price</label>
+      <input type="number" name="OfferPrice" class="form-control col-md-3"  value="{{product.OfferPrice}}" required>
+
+       <label for="">Description</label>
+      <input type="text" name="Description" class="form-control" value="{{product.Description}}">
+
+<div class="form-group  ">
+                          <label for="stock" >Stock </label>
+                          <input id="stock" name="stock" type="text" class="form-control validate"   value="{{product.stock}}">
+                          <span id="Stock" class="text-danger"></span>
+                        </div>
+                        
+
+      <label for="">Image</label>
+      <img src="/product-images/{{product._id}}.jpg" alt="" style="width:100px ; height: auto;" id="imgView"> 
+      <input type="file" name="image" class="form-control"  onchange="viewImage(event)">
+
+      <label for="">Image</label>
+      <img src="/product-img1/{{product._id}}.jpg" alt="" style="width:100px ; height: auto;" id="imgView1"> 
+      <input type="file" name="image1" class="form-control"  onchange="viewImg1(event)">
+
+      <label for="">Image</label>
+      <img src="/product-img2/{{product._id}}.jpg" alt="" style="width:100px ; height: auto;" id="imgView2"> 
+      <input type="file" name="image2" class="form-control"  onchange="viewImg2(event)">
+
+      <label for="">Image</label>
+      <img src="/product-img3/{{product._id}}.jpg" alt="" style="width:100px ; height: auto;" id="imgView3"> 
+      <input type="file" name="image3" class="form-control"  onchange="viewImg3(event)">
+
+
+
+  <button type="submit" class="btn btn-primary mt-4">Submit</button>
+    <a href="/admin/product-view" type="submit" class="btn btn-primary mt-4">Cancel</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<script>
+    function viewImage(event){
+        document.getElementById('imgView').src=URL.createObjectURL(event.target.files[0])
+    }
+</script>
+
+<script>
+    function viewImg1(event){
+        document.getElementById('imgView1').src=URL.createObjectURL(event.target.files[0])
+    }
+</script>
+
+<script>
+    function viewImg2(event){
+        document.getElementById('imgView2').src=URL.createObjectURL(event.target.files[0])
+    }
+</script>
+
+<script>
+    function viewImg3(event){
+        document.getElementById('imgView3').src=URL.createObjectURL(event.target.files[0])
+    }
+</script>

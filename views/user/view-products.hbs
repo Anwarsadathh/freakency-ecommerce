@@ -1,0 +1,524 @@
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Bootstrap theme -->
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+
+
+    <!-- slider section start -->
+    <section class="slider">
+        <div class="slider-active">
+            <div class="single-slider d-flex align-items-center h-950" data-background="img/bg/30.jpg">
+                <div class="container">
+                    <div class="single-slider-inner d-flex align-items-center justify-content-start">
+                        <div class="single-slider-content text-left light-content">
+                            <div class="slider-heading">
+                                <h2 class="mb-0  " data-animation="fadeInUp" data-delay=".2s">Aesthetic</h2>
+                                <h2 class="mb-0 " data-animation="fadeInUp" data-delay=".4s">Men Collection</h2>
+                            </div>
+                            <div class="slider-desc" data-animation="fadeInUp" data-delay=".6s">
+                                <p class="mt-35 mb-0  ">New Spring drops from Over. Shop the Collection</p>
+                            </div>
+                            <div class="slider-link" data-animation="fadeInUp" data-delay=".8s">
+                                <a href="/shop" class="generic-btn mt-70 red-hover-btn text-uppercase">Discover
+                                    now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slider d-flex align-items-center h-950" data-background="img/bg/7.jpg">
+                <div class="container">
+                    <div class="single-slider-inner d-flex align-items-center justify-content-start">
+                        <div class="single-slider-content text-left light-content">
+                            <div class="slider-heading">
+                                <h2 class="mb-0 text-light" data-animation="fadeInUp" data-delay=".2s">Enjoy This</h2>
+                                <h2 class="mb-0 text-light" data-animation="fadeInUp" data-delay=".4s">Summer Trends</h2>
+                            </div>
+                            <div class="slider-desc" data-animation="fadeInUp" data-delay=".6s">
+                                <p class="mt-35 mb-0 text-light">New Spring drops from Over. Shop the Collection</p>
+                            </div>
+                            <div class="slider-link" data-animation="fadeInUp" data-delay=".8s">
+                                <a href="shop2.html" class="generic-btn mt-70 red-hover-btn text-uppercase text-light">Discover
+                                    now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slider d-flex align-items-center h-950" data-background="img/bg/d.jpg">
+                <div class="container">
+                    <div class="single-slider-inner d-flex align-items-center justify-content-start">
+                        <div class="single-slider-content text-left light-content">
+                            <div class="slider-heading">
+                                <h2 class="mb-0 ">Sale Off</h2>
+                                <h2 class="mb-0 ">Clothing For Man</h2>
+                            </div>
+                            <div class="slider-desc" data-animation="fadeInUp" data-delay=".6s">
+                                <p class="mt-35 mb-0 ">New Spring drops from Over. Shop the Collection</p>
+                            </div>
+                            <div class="slider-link" data-animation="fadeInUp" data-delay=".8s">
+                                <a href="/shop" class="generic-btn mt-70 red-hover-btn text-uppercase ">Discover
+                                    now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- slider section end -->
+
+
+
+
+    <!-- category section start -->
+    <section class="category mt-100">
+        <div class="container">
+            <div class="row">
+                {{#each banner}}
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 left-category">
+                    <div class="category-box">
+                        <div class="category-wrapper">
+                            <div class="category-img">
+                                <img src="/banner-img/{{this._id}}.jpg" class="w-100" alt="">
+                            </div>
+                            <div class="category-content">
+                                <a href="shop2.html" class="title"></a>
+                                <p class="category-item">(<span>8</span> items)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
+                            <div class="row">
+                                <div class="col-12 mb-27">
+                                    <div class="category-box">
+                                        <div class="category-wrapper">
+                                            <div class="category-img">
+                                                <img src="img/banner/categorie_2.jpg" class="w-100" alt="">
+                                            </div>
+                                            <div class="category-content">
+                                                <a href="shop2.html" class="title">Handbag</a>
+                                                <p class="category-item"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="category-box">
+                                        <div class="category-wrapper">
+                                            <div class="category-img">
+                                                <img src="img/banner/categorie_3.jpg" class="w-100" alt="">
+                                            </div>
+                                            <div class="category-content">
+                                                <a href="shop2.html" class="title">Sneaker</a>
+                                                <p class="category-item"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 category-right">
+                            <div class="category-box">
+                                <div class="category-wrapper">
+                                    <div class="category-img">
+                                        <img src="img/banner/categorie_4.jpg" class="w-100" alt="">
+                                    </div>
+                                    <div class="category-content">
+                                        <a href="shop2.html" class="title">Upcoming</a>
+                                        <p class="category-item"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- category section end -->
+
+
+
+    <!-- main product sections tart -->
+    <section class="main-product mt-100">
+        <div class="container">
+            <ul class="nav nav-pills mb-3">
+                <li class="nav-item">
+                    <a class="active" data-toggle="pill" href="#main-tab-1">New Arrivals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="" data-toggle="pill" href="#main-tab-2">Best Sellers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="" data-toggle="pill" href="#main-tab-3">Top rate</a>
+                </li>
+            </ul>
+            <div class="tab-content mt-25">
+                <div class="tab-pane fade show active" id="main-tab-1">
+                    <div class="main-product-carousel owl-carousel red-nav">
+                            {{#each products}}
+                            <div class="col-12">
+                                <div class="product-box mb-40">
+                                    <div class="product-box-wrapper">
+                                        <div class="product-img">
+                                           
+                                            <a href="/single-product?singlepid={{this._id}}" class="d-block">
+     <img src="/product-images/{{this._id}}.jpg" class="w-100" alt="">
+                                            </a>
+                                            <a href="/single-product?singlepid={{this._id}}"
+                                                class="product-img-link quick-view-1 text-capitalize">Quick view</a>
+                                        </div>
+
+                                        <div class="product-desc pb-20">
+                                            <div class="product-desc-top">
+                                                <div class="categories">
+                                                    <a href="/single-product?singlepid={{this._id}}" class="product-category"><span>{{this.Category}}</span></a>
+                                                </div>
+                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                            class="fal fa-heart"></i></span></a>
+                                            </div>
+                                            <a href="/single-product?singlepid={{this._id}}" class="product-description"><span>{{this.Name}}</span></a>
+                                            <a href="/single-product?singlepid={{this._id}}" class="product-title">{{this.Description}}</a>
+                                           
+                                                    
+                                               
+                                            <div class="price-switcher">
+                                                <span class="price switcher-item text-dark"><del class="text-muted">₹:{{this.OfferPrice}}</del>₹{{this.Price}}</span>
+                                                {{!-- <a href="/add-to-cart/{{this._id}}" class="add-cart text-capitalize switcher-item">+add
+                                                    to cart</a> --}}
+                                                    <a onclick="addToCart('{{this._id}}')" class="add-cart text-capitalize switcher-item">+add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          {{/each}}
+                    </div>
+                    <div class="text-center mt-60">
+                        <a href="/shop" class="load-more">LOAD MORE...</a>
+                    </div>
+                </div>
+                <!-- /. tab content 3 -->
+            </div>
+        </div>
+    </section>
+    <!-- main product sections end -->
+
+
+    <!-- shipping-price section start -->
+    <section class="shipping-price-section shipping-2 pt-130 mt-120 gray-border-top">
+        <div class="container">
+            <div class="shipping-icon text-center">
+                <img src="img/logo/ship-logo.svg" alt="">
+            </div>
+            <div class="shipping-desc pt-35">
+                <h2 class="mb-20">All Order Over ₹1000 Ship Free!</h2>
+                <p class="mb-0"> We believe in providing our customers with the best value, and that's why we offer complimentary shipping for all orders exceeding ₹1000. </p>
+                <p class="mb-0">Whether you're shopping for the latest trends, essential items, or special gifts, you can enjoy the convenience of free shipping on qualifying orders.</p>
+                <p class="mb-0"> It's our way of expressing gratitude for choosing us as your preferred destination.</p>
+                <div class="text-center"><a href="/shop"
+                        class="generic-btn mt-50 red-hover-btn text-uppercase">Discover now</a></div>
+            </div>
+        </div>
+    </section>
+    <!-- shipping-price section end -->
+
+
+    <!-- footer section start -->
+    <section class="footer">
+        <div class="footer-top mt-120 pb-120 pt-115" style="background-color: #f5f5f5;">
+            <div class="footer-top-wrapper">
+                <div class="newsletter ">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                            <h2 class="title m-0">Sign Up For Our Newsletter</h2>
+                            <p>Subscribe our newsletter and get discount 20% Off</p>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="newsletter-form">
+                                <form action="#" method="POST">
+                                    <input type="text" placeholder="Search for our newsletter...">
+                                    <button type="submit"
+                                        class="generic-btn red-hover-btn text-uppercase float-right">Subscribe
+                                        Now</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.newsletter -->
+                <div class="service pt-57 mt-40 gray-border-top">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-4 col-md-6 service-item">
+                            <div class="service-box service-box-2">
+                                <div class="service-box-content">
+                                    <h4 class="title">Worldwide Shipping</h4>
+                                    <p class="service-desc">Discover seamless global shipping, ensuring your satisfaction with every order.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-md-6 service-item">
+                            <div class="service-box service-box-2">
+                                <div class="service-box-content">
+                                    <h4 class="title">Online Support 24/7</h4>
+                                    <p class="service-desc">Count on our dedicated online support available 24/7 for assistance whenever you need it.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 hidden-md service-item">
+                            <div class="service-box service-box-2">
+                                <div class="service-box-content">
+                                    <h4 class="title">Money Return Guarantee</h4>
+                                    <p class="service-desc">Rest easy with our money-back guarantee for a worry-free shopping experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /. service -->
+                <!-- /. footer bottom -->
+            </div>
+
+        </div>
+        <!-- footer top -->
+
+        <div class="footer-bottom pt-77" style="background-color: #292929;">
+            <div class="container-1180">
+                <div class="footer-bottom-wrapper">
+                    <div class="footer-bottom-primary pb-60">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-5 col-md-9">
+                                <div class="footer-item has-desc">
+                                    <div class="footer-logo mb-25">
+                                         <h2 class="text-white" >Freakency</h2>
+                                    </div>
+                                    <div class="footer-desc">
+                                        <p class="mb-10"> Where Style Meets Expression. Unleash Your Fashion Identity with Every Stitch.
+                                        </p>
+                                    </div>
+                                    <div class="footer-img mt-65">
+                                        <img src="img/logo/paypal.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-7 col-md-12">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                                        <div class="footer-menu">
+                                            <ul>
+                                                <li><a href="javascript:void(0)" class="title">MY ACCOUNT</a></li>
+                                                <li><a href="/userEdit">My account</a></li>
+                                                <li><a href="/checkout">Checkout</a></li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                                        <div class="footer-menu">
+                                            <ul>
+                                                <li><a href="javascript:void(0)" class="title">Quick Links</a></li>
+                                               <li><a href="/shop">Shop</a></li>
+                                                <li><a href="/contact">contact</a></li>
+                                              
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- footer section end -->
+
+
+
+
+
+
+
+    <!-- product popup start -->
+    <section id="product-popup">
+        <div class="product-popup-overlay"></div>
+        <div class="product-popup-container">
+            <div class="product-inner w-100">
+                <div class="product-inner-content">
+                    <div class="quick-close-action"><i class="fal fa-times"></i></div>
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="product-popup-1">
+                                    <div class="product-popup-img">
+                                        <img src="img/product/10.jpg" class="w-100" alt="">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="product-popup-2">
+                                    <div class="product-popup-img">
+                                        <img src="img/product/11.jpg" class="w-100" alt="">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="product-popup-3">
+                                    <div class="product-popup-img">
+                                        <img src="img/product/12.jpg" class="w-100" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="nav nav-pills justify-content-center mt-10">
+                                <li class="nav-item">
+                                    <a class="active" data-toggle="pill" href="#product-popup-1">
+                                        <img src="img/product/10.jpg" class="w-100" alt="">
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="" data-toggle="pill" href="#product-popup-2">
+                                        <img src="img/product/11.jpg" class="w-100" alt="">
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="" data-toggle="pill" href="#product-popup-3">
+                                        <img src="img/product/12.jpg" class="w-100" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-6">
+                            <div class="product-content">
+                                <div class="product-title">
+                                    <h2>Nari Narwhal Usb...</h2>
+                                </div>
+                                <div class="price">$<span>44.00</span>–<span>$250.00</span></div>
+                                <a href="single-product-3.html" class="all-feature">See all feature</a>
+                                <div class="quick-quantity mt-30">
+                                    <form action="#" method="POST">
+                                        <input type="number" value="1">
+                                        <button type="submit" class="generic-btn red-hover-btn text-capitalize">Add to
+                                            cart</button>
+                                    </form>
+                                </div>
+
+                                <div class="product-desc pb-20 mt-25 gray-border-top">
+                                    <p class="mb-0">Typi non habent claritatem insitam, est usus legentis in iis qui
+                                        facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius
+                                        quod ii legunt saepius. Claritas est etiam processus A Capitalize on low hanging
+                                        fruit to identify a ballpark value added activity to beta test. Override the
+                                        digital...ditional clickthroughs from DevOps. Nanotechnology immersion along the
+                                        information highway will close the […]</p>
+                                </div>
+                                <div class="product-list mt-25">
+                                    <ul>
+                                        <li>– Light green crewneck sweatshirt.</li>
+                                        <li>– Hand pockets.</li>
+                                        <li>– Relaxed fit.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- product popup end -->
+
+    <!-- startup popup start -->
+    <section id="startup-popup" class="d-none">
+        <div class="product-popup-overlay has-startup" style="opacity: 1;visibility: visible"></div>
+        <div class="startup-popup-body">
+            <div class="startup-body-content h-100">
+                <div class="row justify-content-end h-100">
+                    <div class="col-6 h-100">
+                        <div class="startup-popup-inner h-100">
+                            <div class="close-search-popup">
+                                <i class="fal fa-times"></i>
+                            </div>
+                            <div class="startup-popup-main-content">
+                                <h2>Get Our Email Letter</h2>
+                                <p class="mb-0">Subscribe to the Mazia store mailing list to receive updates on new
+                                    arrivals, special offers
+                                    and other discount information.</p>
+                                <div class="startup-subscribe-form">
+                                    <form action="#" method="POST">
+                                        <input type="text" placeholder="Subscribe to our newsletter" class="mb-30">
+                                        <button class="generic-btn red-hover-btn text-uppercase">Subscribe now</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="startup-popup-sub-content">
+                                <div class="popup-warning">
+                                    <input type="checkbox" id="startup-popup-hidden">
+                                    <label for="startup-popup-hidden">Do not show the popup again</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- startup popup end -->
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+function addToCart(proId) {
+$.ajax({
+    url:'/add-to-cart/'+proId,
+    method:'get',
+    success:(response)=>{
+        if(response.status){
+            let count=$('#cart-count').html()
+            count=parseInt(count)+1
+            $("#cart-count").html(count)
+            setTimeout(function(){
+   window.location.reload();
+}, 3000);
+        }
+         
+var notification = alertify.notify('Product added to cart', 'success', 3, function(){  console.log('dismissed'); });
+ alertify.set('notifier','position', 'top-center');
+
+    }
+})
+}
+</script>
+
+
+
+
+
+<script src="https://unpkg.com/js-image-zoom/js-image-zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-image-zoom/js-image-zoom.min.js"></script>
+
+
+<script>
+   
+</script>
+
+
+

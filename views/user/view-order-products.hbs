@@ -1,0 +1,273 @@
+{{!-- <section>
+    <div class="container mt-200 ml-5 ">
+        <div class="row">
+            {{#each products}}
+            <div class="col-md-3 p-3">
+                <div class="card" style="width: 15rem; height: 24rem;">
+                    <img class="card-img-top" 
+                    src="/product-images/{{this.product._id}}.jpg"
+                    alt="card images cap"
+                    style="height: 12rem;">
+                    <div class="card-title">
+                        <h5 class="card-title">{{this.product.Name}}</h5>
+                        <p class="card-text">Rs:{{this.product.Price}}</p>
+                         <p class="card-text">Quantity:{{this.quantity}}</p>
+                          <p class="card-text">{{this.Description}}</p>
+                    </div>
+                   
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section> --}}
+
+       
+   <script src="/javascripts/ajax.js"></script>     
+       
+       
+        <main class="main">
+        	<div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
+        		<div class="container mt-100">
+        			<h1 class="page-title">My Orders<span></span></h1>
+        		</div><!-- End .container -->
+        	</div><!-- End .page-header -->
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <div class="container">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+                    </ol>
+                </div><!-- End .container -->
+            </nav><!-- End .breadcrumb-nav -->
+
+            <div class="page-content">
+            	<div class="container">
+					<table class="table table-wishlist table-mobile">
+						<thead>
+							<tr>
+								<th>Product</th>
+                                <th>Name</th>
+								<th>Product Price</th>
+                               
+								
+								<th>Quantity</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+								
+							</tr>
+						</thead>
+
+						<tbody>
+                            {{#each orders}}
+                            
+							<tr class="">
+								<td class="product-col">
+									<div class="product">
+										<figure class="product-media " >
+											<a href="/product-view/{{this.product._id}}" >
+												<img src="/product-images/{{this.product._id}}.jpg" style=" height: 80px;" alt="Product image">
+											</a>
+										</figure>
+
+										<!-- End .product-title -->
+									</div><!-- End .product -->
+								</td>
+                                <td>{{this.product.Name}}</td>
+								<td class="price-col">₹{{this.product.Price}}</td>
+                                {{!-- <td>{{this.deliveryDetails.address.HouseName}},{{this.deliveryDetails.address.streetName}},{{this.deliveryDetails.address.pincode}},{{this.deliveryDetails.address.state}} --}}
+								
+								<td class="action-col">{{this.quantity}}</td>
+                               
+                            {{#if this.cancelled}}
+								 <td class="stock-col"><span class="in-stock text-danger"  id="orderstatus">{{this.status}}</span></td>
+
+                                <td class="remove-col " ><button class="btn-remove text-black btn disabled" id="{{this.product._id}}cancelbtn" onclick="userCancelOrder('{{this._id}}','{{this.product._id}}','{{this.quantity}}')"> Cancel<i class="icon-close"></i></button></td>
+                                {{else}}
+                             
+                                 {{#if this.Delivered}}
+                                
+                                    <td class="stock-col"><span class="in-stock" id="orderstatus">{{this.status}}</span></td>
+
+                                    {{!-- <td class="" ><button  data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn-remove text-black" id="{{this.product._id}}cancelbtn" > Return</button></td> --}}
+
+                                       <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Return
+                                        </button></td>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Return Item</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="card mb-3">
+                                                    <div class="row g-0">
+                                                    <div class="col-md-4">
+                                                        <img src="/product-images/{{this.product._id}}.jpg" height="15rem" width="24rem" class="img-fluid rounded-start m-5"  alt="...">
+                                                        
+                                                    </div>
+                                                    <div class="col-md-6 mt-3">
+                                                        
+                                                        
+                                                            <h6> {{this.product.ProductName}}</h6>
+                                                            <h6>{{this.totalAmount}}</h6>
+                                                            <hr size="8" width="100%" color="black">  
+
+                                                            <h5 class="mt-5">Select you complaint</h5>
+
+                                                            <form action="/return-order" method="post" id="return-order" >
+
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="complaint" id="flexRadioDefault1" value=" Any damage on the product">
+                                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                                        Any damage on the product
+                                                                    </label>
+                                                                </div>
+
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="complaint" id="flexRadioDefault2" value="Packing is not proper" checked>
+                                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                                       Packing is not proper
+                                                                    </label>
+                                                                </div>
+
+                                                                 <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="complaint" value=" Not like the product" id="flexRadioDefault2" checked>
+                                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                                         Not like the product
+                                                                    </label>
+                                                                </div>
+
+                                                                 <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="complaint" value=" Other reasons" id="flexRadioDefault2" checked>
+                                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                                        Other reasons
+                                                                    </label>
+                                                                </div>
+
+                                                                <input type="text" name="status" value="Return-requested" hidden>
+                                                                 <input type="text" name="orderId" value="{{this._id}}" hidden>
+                                                                  <input type="text" name="proId" value="{{this.product._id}}" hidden>
+                                                                  <input type="text" name="Date" value="{{this.date}}" hidden>
+
+
+                                                                <div class="form-group mt-3" >
+                                                                    <label for="description" ><h6>Description</h6></label>
+                                                                    <textarea class="form-control validate" rows="3" name="Discription" id="Discription"   onkeyup="validateProductDescription()"></textarea>
+                                                                    <span id="productdescription" class="text-danger"></span>
+                                                                </div> 
+
+                                                                 <button type="submit" class="btn btn-secondary" >Submit</button>
+                                                            </form>
+                                                            
+                                                        
+                                                    </div>
+                                                    </div>
+                                                </div><!-- End Card with an image on left -->
+                                            </div>
+                                            <div class="modal-footer">
+                                                {{!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button> --}}
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        
+                                    {{else}}
+                                        {{#if this.returnOrder}}
+                                        <td class="stock-col"><span class="in-stock" id="orderstatus">{{this.status}}</span></td>
+
+                                        <td> <button type="button" class="btn btn-primary disabled" data-toggle="modal" data-target="#exampleModal">
+                                        Return
+                                        </button></td>
+
+                                    {{else}}
+                                        {{#if this.refunded}}
+                                        <td class="stock-col"><span class="in-stock" id="orderstatus">{{this.status}}</span></td>
+
+                                        <td> <a href="/view-wallet"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        View Wallet
+                                        </button></a></td>
+
+                                    {{else}}
+                                        <td class="stock-col"><span class="in-stock " id="orderstatus">{{this.status}}</span></td>
+
+                                        
+                                        <td class="remove-col" ><button class="button-36" id="cancelbtn" onclick="userCancelOrder('{{this._id}}','{{this.product._id}}','{{this.quantity}}')"> Cancel<i class="icon-close"></i></button></td>
+                                    {{/if}}
+                                {{/if}}
+                            {{/if}}
+                           {{/if}}
+ 
+							</tr>
+                        {{/each}}
+						</tbody>
+					</table><!-- End .table table-wishlist -->
+	            	
+
+                      
+<script>
+    function userCancelOrder(orderId,proId,quantity){
+		
+	let status = "cancelled"
+	   
+
+	   $.ajax({
+		   url:'/cancelorder',
+		   data:{
+			   status:status,
+			   orderId:orderId,
+			   proId:proId,
+			   quantity:quantity
+		   },
+		   method:'post',
+		   success:()=>{	
+				location.reload()
+				
+		   }
+
+   })
+	
+}
+	
+
+</script><style>
+  /* CSS */
+  .button-36 {
+    background-image: linear-gradient(92.88deg, #002fda 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 3rem;
+    padding: 0 1.6rem;
+    text-align: center;
+    text-shadow: rgba(235, 10, 10, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .button-36:hover {
+    box-shadow: rgba(31, 3, 241, 0.5) 0 1px 30px;
+    transition-duration: .1s;
+  }
+
+  @media (min-width: 768px) {
+    .button-36 {
+      padding: 0 2.6rem;
+    }
+  }

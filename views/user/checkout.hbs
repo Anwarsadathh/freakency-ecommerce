@@ -1,0 +1,903 @@
+<!-- breadcrumb-area-start -->
+        <section class="breadcrumb-area mt-100" data-background="img/bg/page-title.png">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-content" style="flex-direction: column;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb p-0 m-0">
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                                </ol>
+                            </nav>
+                         <h2 class="cart-title mt-40">Cart</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+
+        <!-- coupon-area start -->
+        <section class="coupon-area pt-30 pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="coupon-accordion">
+                            <!-- ACCORDION START -->
+                            <h3>Returning customer? <span id="showlogin">Click here to login</span></h3>
+                            <div id="checkout-login" class="coupon-content">
+                                <div class="coupon-info">
+                                    <p class="coupon-text">Quisque gravida turpis sit amet nulla posuere lacinia. Cras sed est
+                                        sit amet ipsum luctus.</p>
+                                    <form action="#">
+                                        <p class="form-row-first">
+                                            <label>Username or email <span class="required">*</span></label>
+                                            <input type="text" />
+                                        </p>
+                                        <p class="form-row-last">
+                                            <label>Password <span class="required">*</span></label>
+                                            <input type="text" />
+                                        </p>
+                                        <p class="form-row">
+                                            <button class="btn theme-btn" type="submit">Login</button>
+                                            <label>
+                                                <input type="checkbox" />
+                                                Remember me
+                                            </label>
+                                        </p>
+                                        <p class="lost-password">
+                                            <a href="javascript:void(0)">Lost your password?</a>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- ACCORDION END -->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="coupon-accordion">
+                            <!-- ACCORDION START -->
+                            <h3>Have a coupon? <span id="showcoupon">Click here to enter your code</span></h3>
+                             <p id="error" value="" style="color:red;"></p>
+                            <div id="checkout_coupon" class="coupon-checkout-content">
+                                <div class="coupon-info">
+                                    <form action="#">
+                                        <p class="checkout-coupon">
+                                            <input type="text" id="couponName" placeholder="Coupon Code" name="couponcode"/>
+                                           <div class="Place-order btn-hover text-center">
+                                <button  onclick="applyCoupon(event)" class="btn border border-success bg-success " id="applybutton"  style="font-size: 15px;"> <strong> Apply Coupon</strong></button>
+                                <button class="btn border border-success bg-success " id="deletebutton" onclick="removeCoupon(event)" style="font-size: 15px;"
+                                    hidden="true"> <strong> Remove Coupon</strong>
+                                </button>
+                            </div>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- ACCORDION END -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- coupon-area end -->
+
+
+            
+
+        <!-- checkout-area start -->
+        <section class="checkout-area pb-70">
+            <div class="container">
+                
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="checkbox-form">
+                                <h3>Billing Details</h3>
+                                <div class="row"> 
+                                    {{!-- <div class="col-md-12">
+                                        <div class="country-select">
+                                            <label>Country <span class="required">*</span></label>
+                                            <select>
+                                                <option value="volvo">bangladesh</option>
+                                                <option value="saab">Algeria</option>
+                                                <option value="mercedes">Afghanistan</option>
+                                                <option value="audi">Ghana</option>
+                                                <option value="audi2">Albania</option>
+                                                <option value="audi3">Bahrain</option>
+                                                <option value="audi4">Colombia</option>
+                                                <option value="audi5">Dominican Republic</option>
+                                            </select>
+                                        </div>
+                                    </div> --}}
+                                    {{!-- <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label> Name <span class="required">*</span></label>
+                                            <input name="Name" type="text" placeholder="" required/>
+                                            <input type="text" name="userId" id="" value="{{user._id}}" hidden>
+                                        </div>
+                                    </div> --}}
+                                    {{!-- <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Last Name <span class="required">*</span></label>
+                                            <input type="text" placeholder="" />
+                                        </div>
+                                    </div> --}}
+                                    {{!-- <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>Company Name</label>
+                                            <input type="text" placeholder="" />
+                                        </div>
+                                    </div> --}}
+                                    {{!-- <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>Address <span class="required">*</span></label>
+                                            <input name="Address" type="text" placeholder="Street address" required/>
+                                        </div>
+                                    </div> --}}
+                                    {{!-- <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <input type="text" placeholder="Apartment, suite, unit etc. (optional)" />
+                                        </div>
+                                    </div> --}}
+                                    {{!-- <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>Town / City <span class="required">*</span></label>
+                                            <input type="text" placeholder="Town / City" />
+                                        </div>
+                                    </div> --}}
+                                    {{!-- <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>State / County <span class="required">*</span></label>
+                                            <input name="State" type="text" placeholder="" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Pincode <span class="required">*</span></label>
+                                            <input name="Pincode" type="number" placeholder="Postcode / Zip" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Email Address <span class="required">*</span></label>
+                                            <input name="Email" type="email" placeholder="" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Phone <span class="required">*</span></label>
+                                            <input name="Mobile" type="number" placeholder="Phone number" required/>
+                                        </div>
+                                    </div> --}}
+                                    {{!-- <div class="col-md-12">
+                                        <div class="checkout-form-list create-acc">
+                                            <input id="cbox" type="checkbox" />
+                                            <label>Create an account?</label>
+                                        </div>
+                                        <div id="cbox_info" class="checkout-form-list create-account">
+                                            <p>Create an account by entering the information below. If you are a returning
+                                                customer please login at the top of the page.</p>
+                                            <label>Account password <span class="required">*</span></label>
+                                            <input type="password" placeholder="password" />
+                                        </div>
+                                    </div> --}}
+                                    
+
+
+<div style="margin-right:5rem ;">
+    <a style="" class="login-trigger btn btn-primary  btn-lg active ml-5 mb-5" href="#" data-target="#login" data-toggle="modal">Add New Address</a>
+    <div id="login" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button data-dismiss="modal" class="close">&times;</button>
+            <h4>ADD-New-One</h4>
+            <form action="/ADD-AD" method="post">
+              <input type="text" name="Name" class="password form-control" placeholder="Name" />
+              <input type="text" name="Town" class="password form-control" placeholder="Town" />
+              <textarea name="adress" placeholder="Adress" id=""
+                style="width:20rem;color: #dadada;  margin-right:14rem;"></textarea>
+              <input type="text" name="state" class="password form-control" placeholder="State" />
+              <input type="email" name="Email" class="password form-control" placeholder="Email" />
+              <input type="text" name="Pincode" class="password form-control" placeholder="Pincode" />
+              <input type="text" name="Phone" class="password form-control" placeholder="Phone-Number" />
+              <button class="btn btn-dark" type="submit">Add-adress</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Trigger-->
+<div class="container">
+<div class="row">
+    
+    
+      <h3 class="ml-5 text-ce  text-success" >Select your adress</h3>
+    
+    {{#each addData }}
+    <div class="card  mb-3 ml-3" style="max-width: 18rem;">
+      <div class="card-header">
+        <input type="radio" id="" value="{{this.id}}" name="adressUid">
+        Existing Address
+      </div>
+      <div class="card-body text-dark">
+        <p class="text-dark">Name:{{this.Name}}</p>
+        <p class="text-dark">Email:{{this.Email}}</p>
+        <p class="text-dark">City:{{this.City}}</p>
+        <p class="text-dark">state:{{this.state}}</p>
+        <p class="text-dark">Adress:{{this.Adress}}</p>
+        <p class="text-dark">pincode:{{this.pincode}}</p>
+        <p class="text-dark">Number:{{this.Phone}}</p>
+        <button class=" delete-button btnn btn-danger ml-5"
+          onclick="removeAdress('{{this.id}}','{{this._id}}')">Delete</button>
+          
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="your-order mb-30 ">
+                                <h3>Your order</h3>
+                                <div class="your-order-table table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="product-name">Product</th>
+                                                <th class="product-total">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{#each products}}
+                                            <tr class="cart_item">
+                                                <td class="product-name">
+                                                   <strong class="product-quantity">  {{this.product.Name}} × {{this.quantity}}</strong>
+                                                </td>
+                                                <td class="product-total">
+                                                    <span class="amount">{{this.product.Price}}</span>
+                                                </td>
+                                            </tr>
+                                           
+                                            {{/each}}
+                                        </tbody>
+                                        <tfoot>
+                                            {{!-- <tr class="cart-subtotal">
+                                                <th>Cart Subtotal</th>
+                                                <td><span class="amount">$215.00</span></td>
+                                            </tr> --}}
+                                            <tr class="shipping">
+                                                <th>Shipping</th>
+                                                <td>
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" />
+                                                            <label>
+                                                                Flat Rate: <span class="amount">$7.00</span>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" />
+                                                            <label>Free Shipping:</label>
+                                                        </li>
+                                                        <li></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                          
+                                            <tr class="order-total">
+                                                <th>Order Total</th>
+                                                <td><strong><span  class="amount">Rs:{{total}}</span></strong>
+                                                </td>
+                                              
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+   <div class="your-order-info order-total">
+                        {{!-- <ul>
+
+                            <li>Products-total <span >₹{{total}}</span></li>
+                        </ul> --}}
+                        {{!-- <div class="your-order-info order-subtotal">
+                            <ul>
+                                <li>Subtotal <span>{{totalAmount}}</span></li>
+                            </ul>
+                        </div> --}}
+                        <div class="your-order-info order-subtotal">
+                            <ul>
+                                <li>Discount Percentage <span id="percentage">0</span></li>
+                            </ul>
+                        </div>
+                        <div class="your-order-info order-subtotal">
+                            <ul>
+                                <li>Discount Amount <span id="discount">0</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="your-order-info order-total">
+                            <ul>
+                                <li>
+                                                              <i><p  id="error2" value="" style="color:rgb(0, 90, 36); float:right;"></p></i></span>
+
+
+                                </li>
+                                <br>
+                                <br>
+                                                                             <input type="number"  name="payable" class="amount" id="payable"  value="" hidden>
+                                {{!-- <li class="text-danger" style="font-size: 30px;"> <strong>Total</strong> <span class="amount" id="payableAmount" style="font-size: 30px ; font-weight: 600;">₹{{total}}</span></li> --}}
+
+                                <li class="text-dark" style="font-size: 30px;"> <strong>Total</strong>₹ <span class="text-danger" id="totall" >{{total}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                                {{!-- <div class="payment-method">
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne">
+                                                <h5 class="mb-0">
+                                                    <button class="btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                                        aria-expanded="true" aria-controls="collapseOne">
+                                                        Direct Bank Transfer
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                                data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    Make your payment directly into our bank account. Please use your Order ID
+                                                    as the payment
+                                                    reference. Your order won’t be
+                                                    shipped until the funds have cleared in our account.
+                                                </div>
+                                            </div>
+                                        </div> --}}
+                                        {{!-- <div class="card">
+                                            <div class="card-header" id="headingTwo">
+                                                <h5 class="mb-0">
+                                                    <button class="btn-link collapsed" type="button" data-toggle="collapse"
+                                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                        Cheque Payment
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    Please send your cheque to Store Name, Store Street, Store Town, Store
+                                                    State / County, Store
+                                                    Postcode.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="headingThree">
+                                                <h5 class="mb-0">
+                                                    <button class="btn-link collapsed" type="button" data-toggle="collapse"
+                                                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                        PayPal
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    Pay via PayPal; you can pay with your credit card if you don’t have a
+                                                    PayPal account.
+                                                </div>
+                                            </div>
+                                        </div> --}}
+                                        <h5 class="mt-5">Payment Method</h5>
+                                        <div class="payment-method">
+                                        <label>
+                                            <input type="radio" name="payment-method" value="COD" checked>CASH ON DELIVERY
+                                        </label>
+                                        </div>
+                                        <div class="radio-inline">
+                                        <label>
+                                            <input type="radio" name="payment-method" value="ONLINE">Razorpay
+                                        </label>
+                                        </div>
+ <div class="radio-inline">
+                                        <label>
+                                            <input type="radio" name="payment-method" value="PAYPAL"> Paypal
+                                        </label>
+                                        </div>
+                                    
+                                        {{!-- <div class="radio-inline">
+                                        <label>
+                                            <input type="radio" name="payment-method" value="COD" checked>COD
+                                        </label>
+                                        </div>
+                                        <div class="radio-inline">
+                                        <label>
+                                            <input type="radio" name="payment-method" value="COD" checked>COD
+                                        </label>
+                                        </div> --}}
+                                    </div>
+                                    <div class="order-button-payment mt-20">
+                                        <button type="submit" onclick="procedTopayment()" class="btn theme-btn">Place order</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+            </div>
+             
+        </section>
+       
+       
+       
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+ function procedTopayment() {
+    console.log('prcpmnt>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+    uiAdress = document.querySelector('input[name=adressUid]:checked').value;
+    payment = document.querySelector('input[name=payment-method]:checked').value;
+
+    $.ajax({
+      url: '/checkout',
+      data: {
+        selectedAdress: uiAdress,
+        selectedPayment: payment
+      },
+      method: 'post',
+      success: (response) => {
+        console.log(response)
+        var notification = alertify.notify('Proceeding to payment...', 'success', 5, function(){  console.log('Proceeding to payment...'); });
+        if (response.codSuccess) {
+
+          location.href='/order-success'
+        }else if (response.pay) {
+          location.replace(response.linkto)
+        }else{
+          razorpayPayment(response)
+        }
+      }
+    })
+  }
+
+        {{!-- <script>
+            $("#checkout-form").submit((e)=>{
+                e.preventDefault()
+               $.ajax({
+                url:'/checkout',
+                method:'post',
+                data:$('#checkout-form').serialize(),
+                success:(response)=>{
+                    alert(response)
+                    if(response.codSuccess){
+                        location.href='/order-success'
+                        
+                    }else{
+                        razorpayPayment(response)
+
+                    }
+                }
+               })
+            }) --}}
+            function razorpayPayment(order){
+                var options = {
+    "key": "rzp_test_nAawGAbwhIQyoQ", // Enter the Key ID generated from the Dashboard
+    "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Freakency",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+     "handler": function (response){    // --Success handling code
+       // alert(response.razorpay_payment_id);
+        //alert(response.razorpay_order_id);
+        //alert(response.razorpay_signature)
+
+        verifyPayment(response,order)
+    },    // --Success handling code
+    "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com",
+        "contact": "9999999999"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    },
+    "modal": {
+        "ondismiss": function(){
+          window.location.replace('http://localhost:3000/payment-failedd/'+order.receipt);
+        }
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on("payment.failed",()=>{
+    alert("failed")
+})
+ rzp1.open();
+            }
+ 
+ function verifyPayment(payment,order){
+    $.ajax({
+      url:'/verify-payment',
+      data:{
+        payment,
+        order
+      },
+      method:'post',
+      success:(response)=>{
+        if(response.status){
+            location.href='/order-success'
+        }else{
+          alert("Payment Failed ! ")
+        }
+      }
+    })
+  }
+
+function removeAdress(adressId,userId) {
+$.ajax({
+    url:'/address-remove',
+    method:'post',
+    data:{
+        userId:userId,
+        adressId:adressId
+
+    },
+    success:(response)=>{
+        var notification = alertify.notify('Address deleted', 'success', 5, function(){  console.log('dismissed'); });
+ alertify.set('notifier','position', 'top-center');
+setTimeout(function(){
+   window.location.reload();
+}, 1000);
+
+    }
+})
+}
+
+        </script> 
+
+     
+
+        </main>
+
+
+
+
+
+
+
+
+    <!-- footer section start -->
+    <section class="footer">
+        <div class="footer-top mt-120 pb-120 pt-115" style="background-color: #f5f5f5;">
+            <div class="footer-top-wrapper">
+                <div class="newsletter ">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                            <h2 class="title m-0">Sign Up For Our Newsletter</h2>
+                            <p>Subscribe our newsletter and get discount 20% Off</p>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="newsletter-form">
+                                <form action="#" method="POST">
+                                    <input type="text" placeholder="Search for our newsletter...">
+                                    <button type="submit"
+                                        class="generic-btn red-hover-btn text-uppercase float-right">Subscribe
+                                        Now</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.newsletter -->
+                <div class="service pt-57 mt-40 gray-border-top">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-4 col-md-6 service-item">
+                            <div class="service-box service-box-2">
+                                <div class="service-box-content">
+                                    <h4 class="title">Worldwide Shipping</h4>
+                                    <p class="service-desc">Discover seamless global shipping, ensuring your satisfaction with every order.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-md-6 service-item">
+                            <div class="service-box service-box-2">
+                                <div class="service-box-content">
+                                    <h4 class="title">Online Support 24/7</h4>
+                                    <p class="service-desc">Count on our dedicated online support available 24/7 for assistance whenever you need it.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 hidden-md service-item">
+                            <div class="service-box service-box-2">
+                                <div class="service-box-content">
+                                    <h4 class="title">Money Return Guarantee</h4>
+                                    <p class="service-desc">Rest easy with our money-back guarantee for a worry-free shopping experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /. service -->
+                <!-- /. footer bottom -->
+            </div>
+
+        </div>
+        <!-- footer top -->
+
+        <div class="footer-bottom pt-77" style="background-color: #292929;">
+            <div class="container-1180">
+                <div class="footer-bottom-wrapper">
+                    <div class="footer-bottom-primary pb-60">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-5 col-md-9">
+                                <div class="footer-item has-desc">
+                                    <div class="footer-logo mb-25">
+                                         <h2 class="text-white" >Freakency</h2>
+                                    </div>
+                                    <div class="footer-desc">
+                                        <p class="mb-10"> Where Style Meets Expression. Unleash Your Fashion Identity with Every Stitch.
+                                        </p>
+                                    </div>
+                                    <div class="footer-img mt-65">
+                                        <img src="img/logo/paypal.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-7 col-md-12">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                                        <div class="footer-menu">
+                                            <ul>
+                                                <li><a href="javascript:void(0)" class="title">MY ACCOUNT</a></li>
+                                                <li><a href="/userEdit">My account</a></li>
+                                                <li><a href="/checkout">Checkout</a></li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                                        <div class="footer-menu">
+                                            <ul>
+                                                <li><a href="javascript:void(0)" class="title">Quick Links</a></li>
+                                               <li><a href="/shop">Shop</a></li>
+                                                <li><a href="/contact">contact</a></li>
+                                              
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- product popup start -->
+    <section id="product-popup">
+        <div class="product-popup-overlay"></div>
+        <div class="product-popup-container">
+            <div class="product-inner w-100">
+                <div class="product-inner-content">
+                    <div class="quick-close-action"><i class="fal fa-times"></i></div>
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="product-popup-1">
+                                    <div class="product-popup-img">
+                                        <img src="img/product/10.jpg" class="w-100" alt="">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="product-popup-2">
+                                    <div class="product-popup-img">
+                                        <img src="img/product/11.jpg" class="w-100" alt="">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="product-popup-3">
+                                    <div class="product-popup-img">
+                                        <img src="img/product/12.jpg" class="w-100" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="nav nav-pills justify-content-center mt-10" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="active" data-toggle="pill" href="#product-popup-1">
+                                        <img src="img/product/10.jpg" class="w-100" alt="">
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="" data-toggle="pill" href="#product-popup-2">
+                                        <img src="img/product/11.jpg" class="w-100" alt="">
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="" data-toggle="pill" href="#product-popup-3">
+                                        <img src="img/product/12.jpg" class="w-100" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-6">
+                            <div class="product-content">
+                                <div class="product-title">
+                                    <h2>Nari Narwhal Usb...</h2>
+                                </div>
+                                <div class="price">$<span>44.00</span>–<span>$250.00</span></div>
+                                <a href="single-product-4.html" class="all-feature">See all feature</a>
+                                <div class="quick-quantity mt-30">
+                                    <form action="#" method="POST">
+                                        <input type="number" value="1">
+                                        <button type="submit" class="generic-btn red-hover-btn text-capitalize">add to
+                                            cart</a>
+                                    </form>
+                                </div>
+
+                                <div class="product-desc pb-20 mt-25 gray-border-top">
+                                    <p class="mb-0">Typi non habent claritatem insitam, est usus legentis in iis qui
+                                        facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius
+                                        quod ii legunt saepius. Claritas est etiam processus A Capitalize on low hanging
+                                        fruit to identify a ballpark value added activity to beta test. Override the
+                                        digital...ditional clickthroughs from DevOps. Nanotechnology immersion along the
+                                        information highway will close the […]</p>
+                                </div>
+                                <div class="product-list mt-25">
+                                    <ul>
+                                        <li>– Light green crewnec...t.</li>
+                                        <li>– Hand pockets.</li>
+                                        <li>– Relaxed fit.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- product popup end -->
+
+    <!-- startup popup start -->
+    <section id="startup-popup">
+        <div class="product-popup-overlay has-startup" style="opacity: 1;visibility: visible"></div>
+        <div class="startup-popup-body">
+            <div class="startup-body-content h-100">
+                <div class="row justify-content-end h-100">
+                    <div class="col-6 h-100">
+                        <div class="startup-popup-inner h-100">
+                            <div class="close-search-popup">
+                                <i class="fal fa-times"></i>
+                            </div>
+                            <div class="startup-popup-main-content">
+                                <h2>Get Our Email Letter</h2>
+                                <p class="mb-0">Subscribe to the Mazia store mailing list to receive updates on new
+                                    arrivals, special offers
+                                    and other discount information.</p>
+                                <div class="startup-subscribe-form">
+                                    <form action="#" method="POST">
+                                        <input type="text" placeholder="Subscribe to our newsletter" class="mb-30">
+                                        <button class="generic-btn red-hover-btn text-uppercase">Subscribe now</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="startup-popup-sub-content">
+                                <div class="popup-warning">
+                                    <input type="checkbox" id="startup-popup-hidden">
+                                    <label for="startup-popup-hidden">Do not show the popup again</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- startup popup end -->
+    
+<script>
+    
+    function applyCoupon(event) {
+        event.preventDefault();
+        let coupon = document.getElementById('couponName').value
+        // let total = document.getElementById('totalAM').innerText
+        console.log(coupon,"bjhgfhdgs")
+        $.ajax({
+            url: '/apply-coupon',
+            data: {
+                coupon
+            },
+            method: 'post',
+            success: (response) =>{
+                console.log(response,"ghbkjldfs");
+             if(response.verify){
+
+                document.getElementById('discount').innerHTML="₹"+response.discountAmount
+                document.getElementById('totall').innerHTML= "₹"+response.amount
+                document.getElementById('percentage').innerHTML=response.couponData.value+'%'
+                document.getElementById('error').innerHTML = ''
+                document.getElementById('error2').innerHTML = '(Coupon has Applied)'
+                document.getElementById("applybutton").hidden = true
+                document.getElementById("deletebutton").hidden = false
+                
+                
+    
+               }else{
+
+                
+                document.getElementById('discount').innerHTML= "₹" +0
+                document.getElementById('totall').innerHTML= "₹"+response.Total
+                document.getElementById('percentage').innerHTML= 0 + "%"
+    
+                if(response.used){
+                    document.getElementById('error').innerHTML = response.used
+                   }else if(response.minAmount){
+                    document.getElementById('error').innerHTML = response.minAmountMsg
+                   }else if(response.maxAmount){
+                    document.getElementById('error').innerHTML = response.maxAmountMsg
+                   }else if(response.invalidDate){
+                    document.getElementById('error').innerHTML = response.invalidDateMsg
+                   }else if(response.invalidCoupon){
+                    document.getElementById('error').innerHTML = response.invalidCouponMsg
+                   }else if(response.noCoupon){
+                    document.getElementById('error').innerHTML = 'Invalid Coupon Details'
+                   }
+        
+               }
+            }
+        })
+    
+    }
+    
+    
+function removeCoupon(event) {
+    event.preventDefault();
+    let coupon = document.getElementById('couponName').value
+    console.log(coupon , "hvhv")
+    $.ajax({
+        url: '/remove-coupon',
+        data: {
+            coupon
+        },
+        method: 'post',
+        success: ((response) => {
+            swal({
+                title: "Coupon Deleted!",
+                text: "You clicked the button!",
+                icon: "success",
+                button: "OK!",
+            }).then(() => {
+                document.getElementById('percentage').innerHTML=0
+                document.getElementById('discount').innerHTML=0
+                document.getElementById('error2').innerHTML = ''
+                document.getElementById('couponName').value = ''
+
+                // document.getElementById('couponName').value = ""
+                document.getElementById("applybutton").hidden = false
+                document.getElementById("deletebutton").hidden = true
+                document.getElementById("error").innerHTML = ""
+                document.getElementById('totall').innerHTML=response.totalAmount
+            })
+        })
+})
+    }
+</script>
+
+
+
+

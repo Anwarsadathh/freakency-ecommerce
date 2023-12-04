@@ -1,0 +1,95 @@
+           <link
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+        <link rel="stylesheet"
+            href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+      
+   <div class="my-account-wrapper pb-100 pt-100">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-lg-12 ">
+                                <!-- My Account Page Start -->
+                                <div class="myaccount-page-wrapper">
+                                    <!-- My Account Tab Menu Start -->
+                                   
+                                     
+    <div class="tab-pane "
+                                                    id="address-edit"
+                                                    role="tabpanel">
+                                                    <div
+                                                        class="myaccount-content">
+                                                        <h3>Wallet History</h3>
+
+                                                        <p>Wallet Balance: ₹ <span class="text-warning">{{wallet.wallet}}</span> </p>
+                                                        
+                                                       <div class="myaccount-table
+                                                        table-responsive
+                                                        text-center">
+                                                        <table id="example"
+                                                            class="table
+                                                            table-bordered"
+                                                            style="width:100%">
+                                                            <thead
+                                                                class="thead-dark">
+                                                                <tr> 
+                                                                    <th>ORDER-ID</th>
+                                                                    <th>DATE</th>
+                                                                    <th>ACTIVITY</th>
+                                                                    {{!-- <th><i class="fas fa-arrow-down text-danger">&nbsp;</i>DEBIT</th>  --}}
+                                                                    <th><i class="fas fa-arrow-up text-success">&nbsp;</i>Status</th>
+                                                                    <th> ₹ AMOUNT</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {{#each historys}}
+                                                                <tr>
+                                                                    <td>{{this.walletHistory.orderId
+                                                                        }}</td>
+                                                                    <td>{{this.walletHistory.date
+                                                                        }}</td>
+                                                                    <td
+                                                                        >{{this.walletHistory.description
+                                                                        }}</td>
+                                                                    {{!-- <td class="text-danger"> <b>{{this.walletHistory.debit
+                                                                        }}</b>
+                                                                    </td> --}}
+                                                                    <td class="text-success"> <b>{{this.walletHistory.credit
+                                                                        }}</b></td>
+                                                                    <td class="text-info"> ₹ <b> {{this.walletHistory.amount
+                                                                        }}</b></td>
+                                                                    
+                                                                </tr>
+                                                                {{/each}}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                        
+                                                    </div>
+                                                </div>
+
+
+                                                </div>  </div>
+                                                </div>  </div>
+                                                </div>
+
+
+               <!-- All JS is here -->
+           
+        
+           
+      
+            <script
+                src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+            <script
+                src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+            
+     
+      
+        <script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+    </html>

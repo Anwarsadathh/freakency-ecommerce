@@ -1,0 +1,261 @@
+  <!-- header section start -->
+    <style>
+        .animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+     #231557 0%,
+    #a057ed 29%,
+    #9f9095 67%,
+    #000000 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 35px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+@media (min-width: 1200px) {
+  .responsive-font-example {
+    font-size: 35px;
+  }
+}
+
+/* If the screen size is smaller than 1200px, set the font-size to 80px */
+@media (max-width: 1199.98px) {
+  .responsive-font-example {
+    font-size: 25px;
+  }
+  
+}
+@media (max-width: 508px) {
+  .responsive-font-example {
+    font-size: 15px;
+  }
+  
+}
+
+    </style>
+
+
+    {{!-- #231557 0%,
+    #a057ed 29%,
+    #9f9095 67%,
+    #000000 100% --}}
+    <header class="header pt-30 pb-30  header-sticky">
+        <div class="container-fluid">
+            <div class="header-nav position-relative">
+                <div class="row align-items-center">
+                    <div class="col-xl-2 col-lg-1 col-md-6 col-sm-6 col-3">
+                        <div class="logo">
+                            <h6 class=" mt-2 animate-charcter responsive-font-example" >Freakency</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-8 hidden-md position-static">
+                        <div class="header-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="/" class=" pl-5"><span>Home <i
+                                                    class="fal fa-angle-down"></i></span></a>
+
+
+                                    </li>
+                                    <li class=" text-light "><a href="/shop"><span>Shop <i
+                                                    class="fal fa-angle-down"></i></span></a>
+                                       
+                                    </li>
+                                  
+                                    
+                                    <li><a href="javascript:void(0)"><span>Category</span> <i
+                                                class="fal fa-angle-down"></i></a>
+                                        <ul class="submenu">
+                                            {{#each categoryView}}
+                                            <li><a href="/categoryView?id={{this._id}}">{{this.Name}}</a></li>
+                                           {{/each}}
+                                        </ul>
+                                    </li>
+                                    <li><a href="/contact"><span>Contact</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-3 col-6 col-md-6 col-sm-6 col-9">
+                        <div class="header-right">
+                            <ul class="text-right">
+                                <li><a href="/login" class="account "><i class="fal fa-user-friends"></i>
+                                        <article class="account-registar d-inline-block ">
+                                           {{#if user}}
+                                         <h6>{{user.Name}}</h6>
+                                           {{else}}
+                                            Login/Sign up
+                                           {{/if}}
+                                        </article>
+
+                                    </a></li>
+                                     {{#if user}}
+                                        <a class=" text-danger" href="/logout">Logout</a>
+                                        {{else}}
+                                         <a  href="/login"></a>
+                                        {{/if}}
+                                <li><a href="javascript:void(0)"><i class="fal fa-search"></i></a>
+                       
+                                    <!-- search popup -->
+                                    <div id="search-popup">
+                                        <div class="close-search-popup">
+                                            <i class="fal fa-times"></i>
+                                        </div>
+                                        <div class="search-popup-inner mt-135">
+                                            <div class="search-title text-center">
+                                                <h2>Search</h2>
+                                            </div>
+
+                                            <div class="search-content pt-55">
+                                                <ul class="text-center">
+                                                   
+                                                    <li><a href="javascript:void(0)">Shirt</a></li>
+                                                    <li><a href="javascript:void(0)">Pants</a></li>
+                                                    <li><a href="javascript:void(0)">T-shirts</a></li>
+                                                    
+                                                </ul>
+
+                                                <div class="search-form mt-35">
+                                                    <form action="/search-input-products" method="post">
+                                                        <input type="text" name = 'search' placeholder="Search Products...">
+                                                        <button type="submit" id="search_button"><i class="fal fa-search"></i></button>
+                                                    </form>
+                                                </div>
+
+                                              
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="/wishlist" data-toggle="tooltip" data-placement="bottom"
+                                        title="view wishlist"><i class="fal fa-heart"><span>0</span></i></a></li>
+                                         <i class="fa-solid fa-cart-shopping fa-lg"></i>
+     
+                                <li><a href="/cart"><i class="fal fa-shopping-bag" ><span id="cart-count">{{cartCount}}</span></i></a>
+                               
+                                    <div class="minicart">
+                                        {{#each pro}}
+                                        <div class="minicart-body">
+                                            <div class="minicart-content">
+                                                <ul class="text-left">
+                                                    <li>
+                                                        <div class="minicart-img">
+                                                            <a href="single-product-3.html" class="p-0"><img src="/product-images/{{this.product._id}}.jpg"
+                                                                    class="w-100" alt=""></a>
+                                                        </div>
+                                                        <div class="minicart-desc">
+                                                            <a href="single-product-3.html" class="p-0"></a>
+                                                            <strong>{{this.quantity}} × {{this.product.Name}}</strong>
+                                                        </div>
+                                                        <div class="remove" onclick="removeCartProduct('{{this._id}}','{{this.product._id}}')">
+                                                            <i class="fal fa-times"></i>
+                                                        </div>
+                                                        {{!-- <div>
+                                                         <a class=" delete-button btnn ml-5 close-btn" onclick="removeCartProduct('{{this._id}}','{{this.product._id}}')"><i class="fal fa-times"></i></a>
+          
+                                                      </div> --}}
+                                                    </li>
+
+                                                   {{!-- // {{/each}} --}}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        {{/each}}
+                                        <div class="minicart-checkout">
+                                            <div class="minicart-checkout-heading mt-8 mb-25 overflow-hidden">
+                                                <strong class="float-left">Total:</strong>
+                                                <span class="price float-right">{{total}}</span>
+                                            </div>
+                                            <div class="minicart-checkout-links">
+                                                <a href="/cart"
+                                                    class="generic-btn black-hover-btn text-uppercase w-100 mb-20">View
+                                                    cart</a>
+                                                <a href="/checkout"
+                                                    class="generic-btn black-hover-btn text-uppercase w-100 mb-20">Checkout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </li>
+ 
+                              <li><a href="javascript:void(0)"><i class="fal fa-align-right"></i></a>
+                                        <ul class="submenu bold-content text-right">
+                                            <li><a href="/us-orders">My Orders</a></li>
+                                            <li><a href="/userEdit">My Account</a></li>
+                                            <li><a href="shop.html">Shop</a></li>
+                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            <li><a href="/w">Wallet</a></li>
+                                        </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu visible-sm">
+                <div id="mobile-menu">
+                    <ul>
+                        <li><a class="pl-3" href="javascript:void(0)">Home</a>
+                  
+                        </li>
+                        <li><a class="pl-3" href="javascript:void(0)">Shop</a>
+                           
+                        </li>
+                        <li><a href="javascript:void(0)">Category</a>
+                           
+                        <li><a href="javascript:void(0)">Portfolio</a>
+                          
+                        </li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /. mobile nav -->
+        </div>
+    </header>
+    <!-- header section end -->
+
+
+ <script>
+     function removeCartProduct(Id,cartId){
+
+			if(confirm("Are you sure?")){
+			
+				$.ajax({
+					url:'/cart-remove',
+					data:{
+						 Id:Id,
+        cartId:cartId
+					},
+					method:'post',
+					success:(response)=>{
+						
+						alert("item  Deleted")
+						location.reload()
+	
+					}
+				})
+			}
+
+		}
+ </script>

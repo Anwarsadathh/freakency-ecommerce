@@ -1,0 +1,103 @@
+<section>
+  <div class="main-content">
+
+    <div class="page-content">
+      <div class="container">
+        <div class="row">
+         
+          <div class="col-12 mt-150">
+            <table class="table" id="myTable">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Address</th>
+                
+                  
+                  <th scope="col">Email</th>
+                  <th scope="col">Mobile no.</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Payment</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each orders}}
+                  <tr>
+                    <td >{{this.date}}</td>
+                    <td>{{this.deliveryDetails.Name}}</td>
+                    <td>{{this.deliveryDetails.address}}</td>
+                    
+                  
+                    <td>{{this.deliveryDetails.Email}}</td>
+                    <td>{{this.deliveryDetails.Mobile}}</td>
+                    <td>{{this.totalAmount}}</td>
+                    <td>{{this.PaymentMethod}}</td>
+                    <td>{{this.status}}</td>
+                    <td>
+                   
+                      <a href="/view-order-products?id={{this._id}}" class=" button-36">Products</a>
+
+                    </td>
+                    {{!-- <td>
+                     <a
+                        href="/delete-order/{{this._id}}"
+                        class="btns btn-lg btn-danger"
+                        onclick="return confirm('Are you sure want to cancel {{this.Name}}?')"
+                      >Cancel</a></div>
+
+                </td> --}}
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
+
+  
+
+
+<style>
+  /* CSS */
+  .button-36 {
+    background-image: linear-gradient(92.88deg, #05df14 9.16%, #68dc45 43.89%, #0e9edc 64.72%);
+
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 3rem;
+    padding: 0 1.6rem;
+    text-align: center;
+    text-shadow: rgba(235, 10, 10, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .button-36:hover {
+    box-shadow: rgba(31, 3, 241, 0.5) 0 1px 30px;
+    transition-duration: .1s;
+  }
+
+  @media (min-width: 768px) {
+    .button-36 {
+      padding: 0 2.6rem;
+    }
+  }
+</style>

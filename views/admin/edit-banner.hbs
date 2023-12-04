@@ -1,0 +1,38 @@
+<section>
+ <div class="main-content">
+                <div class="page-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+      <h2 class="text-center">Edit Banner</h2>
+<form action="/admin/edit-banner/{{banner._id}}" method="post" enctype="multipart/form-data">
+  
+      <label for="">Name</label>
+      <input type="text" name="Name" class="form-control"  value="{{banner.Name}}">
+      
+
+       <label for="">Description</label>
+      <input type="text" name="Description" class="form-control" value="{{banner.Description}}">
+
+      <label for="">Image</label>
+      <img src="/banner-img/{{banner._id}}.jpg" alt="" style="width:100px ; height: auto;" id="imgView"> 
+      <input type="file" name="image" class="form-control"  onchange="viewImage(event)">
+
+ 
+
+
+  <button type="submit" class="btn btn-primary mt-4">Submit</button>
+    <a href="/admin/product-view" type="submit" class="btn btn-primary mt-4">Cancel</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<script>
+    function viewImage(event){
+        document.getElementById('imgView').src=URL.createObjectURL(event.target.files[0])
+    }
+</script>
+

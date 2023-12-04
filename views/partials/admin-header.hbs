@@ -1,0 +1,157 @@
+ <body data-sidebar="dark">
+
+
+        <!-- Loader -->
+            <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+        
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+                            <a href="" class="logo logo-dark">
+                                <span class="logo-sm">
+                                   <h2 class="text-primary mt-4">Freakency</h2>
+                                </span>
+                                <span class="logo-lg">
+                                    
+                                </span>
+                            </a>
+
+                            <a href="" class="logo logo-light">
+                                <span class="logo-sm">
+                                  
+                                </span>
+                                
+                                   <h2 class="text-primary mt-4">Freakency</h2>
+                                
+                            </a>
+                        </div>
+
+                        <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+
+                        <div class="d-none d-sm-block ms-2">
+                            <h4 class="page-title">Dashboard</h4>
+                        </div>
+                    </div>
+
+                    <!-- Search input -->
+                    <div class="search-wrap" id="search-wrap">
+                        <div class="search-bar">
+                            <input class="search-input form-control" placeholder="Search">
+                            <a href="#" class="close-search toggle-search" data-target="#search-wrap">
+                                <i class="mdi mdi-close-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+
+                        <div class="dropdown d-none d-lg-inline-block me-2">
+                            <button type="button" class="btn header-item toggle-search noti-icon waves-effect" data-target="#search-wrap">
+                                <i class="mdi mdi-magnify"></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown d-none d-lg-inline-block me-2">
+                            <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
+                                <i class="mdi mdi-fullscreen"></i>
+                            </button>
+                        </div>
+
+                       
+                       
+
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="rounded-circle header-profile-user" src="../admin/assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">My Wallet</a>
+                                <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span>Settings</a>
+                                <a class="dropdown-item" href="#">Lock screen</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#">Logout</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                                <i class="mdi mdi-spin mdi-cog"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+        
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+
+                <div data-simplebar class="h-100">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                           
+                            
+
+                            <li>
+                                <a href="/admin/" class="waves-effect">
+                                 
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Dashboard </span>
+                                    <a  href="/admin/product-view">Product Management</a>
+                                </a>
+                              <li><span  > <a href="/admin/user-detail">User Management</a></span></li>
+                               <li><span> <a href="/admin/category">Category Management</a></span></li>
+                              <li> <span> <a href="/admin/orders">Order Management</a></span></li>
+                               <li> <span> <a href="/admin/sales">Sales Report</a></span></li>
+                                 {{!-- <span> <a href="/admin/view-salesReport">Sales Report</a></span> --}}
+                            </li>
+
+                            {{!-- <li>
+                                --}}
+                                {{!-- <ul class="sub-menu" aria-expanded="false">
+                                    
+                                    <li><a href="ecommerce-product-grid.html">Product Grid</a></li>
+                                    <li><a href="ecommerce-order-history.html">Order History</a></li>
+                                    <li><a href="ecommerce-customers.html">Customers</a></li>
+                                    <li><a href="ecommerce-product-edit.html">Product Edit</a></li>
+                                </ul>
+                            </li> --}}
+                                  <li class="menu-list waves-effect"><a href=""> <span> Offers & Coupons
+                            </span></a>
+                         <ul class="child-list">
+                                <li><a href="/admin/addcoupen">Add Coupons</a></li>
+                                <li><a href="/admin/viewcoupen">View Coupons</a></li> 
+                              {{!-- <li><a href="/admin-addCatOffer">Add Category Offer</a></li> --}}
+                               
+                              
+                            </ul> 
+                    </li>
+                    
+                      <li class="menu-list"><a href=""> <span> Banner Management
+                            </span></a>
+                         <ul class="child-list">
+                                <li><a href="/admin/banner">Add Banner</a></li>
+                                <li><a href="/admin/view-banner">View Banner</a></li> 
+                              {{!-- <li><a href="/admin-addCatOffer">Add Category Offer</a></li> --}}
+                               
+                              
+                            </ul> 
+                    </li>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+            

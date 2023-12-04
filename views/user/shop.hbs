@@ -1,0 +1,530 @@
+<div class="shop-body mt-100 mb-90">
+        <div class="container-fluid">
+            <nav aria-label="breadcrumb" class="mb-40">
+                <ol class="breadcrumb p-0 m-0">
+                    <li class="breadcrumb-item"><a href="index3.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                </ol>
+            </nav>
+            <div class="shop-wrapper">
+                <div class="row">
+                    
+                    <div class="col-12">
+                        <div class="filter-heading">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-12">
+                                    <div class="filter-shown-item">
+                                        <p class="mb-0">Showing <span>1</span>–<span>24</span> of <span
+                                                class="total_count">56</span> results</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-12">
+                                    <div class="shop-filter-tab">
+                                        <ul class="nav nav-pills">
+                                            <li><span>Views</span></li>
+                                            <li class="nav-item">
+                                                <a  data-toggle="pill" href="#shop-tab-1"
+                                                    data-toggle="tooltip" data-placement="top" title="2 grid"><i
+                                                        class="fal fa-line-columns"></i></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a data-toggle="pill" href="#shop-tab-2" data-placement="top"
+                                                    title="3 grid"><i class="fal fa-border-none"></i></a>
+                                            </li>
+                                            <li class="nav-item" >
+                                                <a data-toggle="pill" href="#shop-tab-3" data-placement="top"
+                                                    title="4 grid" class="active"><i class="fal fa-border-center-v"></i></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a data-toggle="pill" href="#shop-tab-4" data-placement="top"
+                                                    title="list view"><i class="fal fa-list"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 d-flex justify-content-end position-static">
+                                    <div class="sorting d-inline-block">
+                                        <select name="sort" id="shop-sort">
+                                            <option value="default">Default sorting</option>
+                                            <option value="default">Short by popularity</option>
+                                            <option value="default">Sort by average rating</option>
+                                            <option value="default">Sort by latest</option>
+                                            <option value="default">Sort by price: low to high</option>
+                                            <option value="default">Sort by price: high to low</option>
+                                        </select>
+                                    </div>
+                                    <div class="filter">
+                                        <h6 class="d-inline-block filter-widget-toggle">Filter</h6>
+                                        <div class="filter-popup">
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                                    <div class="filter-popup-item">
+                                                        <div class="widget">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                                    <div class="widget">
+                                                        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                                    <div class="widget">
+                                                       
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 position-static">
+                                                    <div class="widget">
+                                                      
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /. filter heading -->
+                        <div class="filter-content">
+                            <div class="tab-content">
+                                <div class="tab-pane fade" id="shop-tab-1">
+                                    <div class="product-wrapper mt-55">
+                                        <div class="row">
+                                            {{#each products}}
+                                            <div class="col-6">
+                                                <div class="product-box mb-40">
+                                                    <div class="product-box-wrapper">
+                                                        <div class="product-img">
+                                                            <img src="/product-images/{{this._id}}.jpg" class="w-100" alt="">
+                                                            <a href="/single-product?singlepid={{this._id}}" class="d-block">
+                                                                <div class="second-img">
+                                                                    <img src="/product-img1/{{this._id}}.jpg" alt=""
+                                                                        class="w-100">
+                                                                </div>
+                                                            </a>
+                                                            <a href="/single-product?singlepid={{this._id}}"
+                                                                class="product-img-link quick-view-1 text-capitalize">Quick
+                                                                view</a>
+                                                        </div>
+
+                                                        <div class="product-desc pb-20">
+                                                            <div class="product-desc-top">
+                                                                <div class="categories">
+                                                                    <a href="/single-product?singlepid={{this._id}}"
+                                                                        class="product-category"><span>{{this.Category}}</span></a>
+                                                                </div>
+                                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                                            class="fal fa-heart"></i></span></a>
+                                                            </div>
+                                                            <a href="/single-product?singlepid={{this._id}}" class="product-title">{{this.Name}}</a>
+                                                             <a href="/single-product?singlepid={{this._id}}" class="product-title">{{this.Description}}</a>
+                                                            <div class="price-switcher">
+                                                                <span class="price switcher-item">Rs:{{this.Price}}</span>
+                                                                <a href="" onclick="addToCart('{{this._id}}')"
+                                                                    class="add-cart text-capitalize switcher-item">+add
+                                                                    to cart</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         {{/each}}
+                                          
+                                          <script>
+  function addToCart(proId) {
+    $.ajax({
+        url:'/add-to-cart/'+proId,
+        method:'get',
+        success:(response)=>{
+            if(response.ststus){
+                let count=$('#cart-count').html()
+                count=parseInt(count)+1
+                $("#cart-count").html(count)
+            }
+             
+            var notification = alertify.notify('Product added to cart', 'success', 3, function(){  console.log('dismissed'); });
+            alertify.set('notifier','position', 'top-center');
+           
+        }
+    })
+    }
+</script>
+                                           
+                                        </div>
+                                     
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="shop-tab-2">
+                                    <div class="product-wrapper mt-55">
+                                        <div class="row">
+                                            {{#each tshirt}}
+                                            <div class="col-xl-4 col-md-4 col-6">
+                                                <div class="product-box mb-40">
+                                                    <div class="product-box-wrapper">
+                                                        <div class="product-img">
+                                                            <img src="/product-images/{{this._id}}.jpg" class="w-100" alt="">
+                                                            <a href="/single-product?singlepid={{this._id}}" class="d-block">
+                                                                <div class="second-img">
+                                                                    <img src="/product-img1/{{this._id}}.jpg" alt=""
+                                                                        class="w-100">
+                                                                </div>
+                                                            </a>
+                                                            <a href="/single-product?singlepid={{this._id}}"
+                                                                class="product-img-link quick-view-1 text-capitalize">Quick
+                                                                view</a>
+                                                        </div>
+
+                                                        <div class="product-desc pb-20">
+                                                            <div class="product-desc-top">
+                                                                <div class="categories">
+                                                                    <a href="/single-product?singlepid={{this._id}}"
+                                                                        class="product-category"><span>{{this.Category}}</span></a>
+                                                                </div>
+                                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                                            class="fal fa-heart"></i></span></a>
+                                                            </div>
+                                                             <a href="/single-product?singlepid={{this._id}}" class="product-title">{{this.Name}}</a>
+                                                            <a href="/single-product?singlepid={{this._id}}" class="product-title">{{this.Description}}</a>
+                                                            <div class="price-switcher">
+                                                                <span class="price switcher-item">Rs:{{this.Price}}</span>
+                                                                <a  onclick="addToCart('{{this._id}}')"
+                                                                    class="add-cart text-capitalize switcher-item">+add
+                                                                    to cart</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{/each}}
+
+                                        </div>
+                                        {{!-- pagination --}}
+			<div class="product__pagination mt-5">
+            {{#each pageCount}}
+            <button class="btn btn-secondary rounded"><a href="/shop-all?id={{this}}" class="text-white">{{this}}</a></button>    
+						{{/each}}
+						  {{!-- {{#unless (next to last page)}} --}}
+            <a href="#"><i class="fa-sharp fa-solid fa-circle-chevron-right text-muted" ></i></a>
+						     {{!-- {{/unless}} --}}
+          </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade  show active" id="shop-tab-3">
+                                    <div class="product-wrapper mt-55">
+                                        <div class="row">
+                                            {{#each products}}
+                                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                                                <div class="product-box mb-40">
+                                                    <div class="product-box-wrapper">
+                                                        <div class="product-img">
+                                                            <img src="/product-images/{{this._id}}.jpg" class="w-100" alt="">
+                                                            <a href="/single-product?singlepid={{this._id}}" class="d-block">
+                                                                <div class="second-img">
+                                                                    <img src="/product-img1/{{this._id}}.jpg" alt=""
+                                                                        class="w-100">
+                                                                </div>
+                                                            </a>
+                                                            <a href="/single-product?singlepid={{this._id}}"
+                                                                class="product-img-link quick-view-1 text-capitalize">Quick
+                                                                view</a>
+                                                        </div>
+
+                                                        <div class="product-desc pb-20">
+                                                            <div class="product-desc-top">
+                                                                <div class="categories">
+                                                                    <a href="/single-product?singlepid={{this._id}}"
+                                                                        class="product-category"><span>{{this.Category}}</span></a>
+                                                                </div>
+                                                                <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                                            class="fal fa-heart"></i></span></a>
+                                                            </div>
+                                                            <a href="/single-product?singlepid={{this._id}}" class="product-title">{{this.Name}}</a>
+                                                             <a href="/single-product?singlepid={{this._id}}" class="product-title">{{this.Description}}</a>
+                                                            <div class="price-switcher">
+                                                                <span class="price switcher-item">Rs:{{this.Price}}</span>
+                                                                <a  onclick="addToCart('{{this._id}}')"
+                                                                    class="add-cart text-capitalize switcher-item">+add
+                                                                    to cart</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                               {{/each}}
+                                          
+                                        </div>
+                                        	<div class="product__pagination mt-5">
+            {{#each pageCount}}
+            <button class="button"><a href="/shop?id={{this}}" class="text-dark"><span class=" text-light">{{this}}</span></a></button>    
+						{{/each}}
+						  {{!-- {{#unless (next to last page)}} --}}
+            <a href="#"><i class="fa-sharp fa-solid fa-circle-chevron-right text-muted" ></i></a>
+						     {{!-- {{/unless}} --}}
+          </div>
+                                       
+                                    </div>
+                                </div>
+                                {{!-- pagination --}}
+		
+                                <div class="tab-pane fade" id="shop-tab-4">
+                                    <div class="product-wrapper mt-55">
+                                        <div class="product-box mb-40">
+                                            <div class="product-box-wrapper">
+                                                <div class="list-product mb-50">
+                                                    <div class="list-product-wrapper">
+                                                        <div class="row">
+                                                           
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- /. list product -->
+                                            </div>
+                                        </div>
+                                        <div class="product-box mb-40">
+                                            <div class="product-box-wrapper">
+                                                <div class="list-product mb-50">
+                                                    <div class="list-product-wrapper">
+                                                        <div class="row">
+                                                            {{#each products}}
+                                                            <div class="col-xl-4 col-lg-4 col-md-4">
+                                                                <div class="list-product-img">
+                                                                    <div class="product-img">
+                                                                        <img src="/product-images/{{this._id}}.jpg" class="w-100"
+                                                                            alt="">
+                                                                        <a href="/single-product?singlepid={{this._id}}" class="d-block">
+                                                                            <div class="second-img">
+                                                                                <img src="/product-img1/{{this._id}}.jpg"
+                                                                                    alt="" class="w-100">
+                                                                            </div>
+                                                                        </a>
+                                                                        <a href="/single-product?singlepid={{this._id}}"
+                                                                            class="product-img-link quick-view-1 text-capitalize">Quick
+                                                                            view</a>
+                                                                        <span
+                                                                            class="sale bg-red text-white">sale!</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col-xl-8 col-lg-8 col-md-8">
+                                                                <div class="list-product-desc">
+                                                                    <h3><a href="/single-product?singlepid={{this._id}}" class="title mb-15">{{this.Name}}</a></h3>
+                                                                    <div class="rating">
+                                                                        <i class="fal fa-star active"></i>
+                                                                        <i class="fal fa-star active"></i>
+                                                                        <i class="fal fa-star active"></i>
+                                                                        <i class="fal fa-star active"></i>
+                                                                        <i class="fal fa-star"></i>
+                                                                    </div>
+                                                                    <div class="price"><span class="red-color">₹{{this.Price}}</span><del>₹499</del></div>
+                                                                    <div class="desc">
+                                                                        <p>{{this.Description}}</p>
+                                                                      
+                                                                        <ul>
+                                                                            <li>– Light green crewneck sweatshirt.</li>
+                                                                            <li>– Hand pockets.</li>
+                                                                            <li>– Relaxed fit.</li>
+                                                                        </ul>
+                                                                        <a onclick="addToCart('{{this._id}}')"
+                                                                            class="list-add-cart-btn text-capitalize mt-40">+add
+                                                                            to cart</a>
+                                                                        <a href="wishlist.html" data-toggle="tooltip"
+                                                                            data-placement="top"
+                                                                            title="wishlist"><span><i
+                                                                                    class="fal fa-heart"></i></span></a>
+                                                                        <a href="javascript:void(0)" data-toggle="tooltip"
+                                                                            data-placement="top"
+                                                                            title="compare"><span><i
+                                                                                    class="fal fa-abacus"></i></span></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {{/each}}
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <!-- /. list product -->
+                                            </div>
+                                        </div>
+                                      
+                                        <!-- /. product box -->
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /. filter content -->
+                    </div>
+                    <!-- /. shop products -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+     <!-- footer section start -->
+    <section class="footer">
+        <div class="footer-top mt-120 pb-120 pt-115" style="background-color: #f5f5f5;">
+            <div class="footer-top-wrapper">
+                <div class="newsletter ">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                            <h2 class="title m-0">Sign Up For Our Newsletter</h2>
+                            <p>Subscribe our newsletter and get discount 20% Off</p>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="newsletter-form">
+                                <form action="#" method="POST">
+                                    <input type="text" placeholder="Search for our newsletter...">
+                                    <button type="submit"
+                                        class="generic-btn red-hover-btn text-uppercase float-right">Subscribe
+                                        Now</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.newsletter -->
+                <div class="service pt-57 mt-40 gray-border-top">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-4 col-md-6 service-item">
+                            <div class="service-box service-box-2">
+                                <div class="service-box-content">
+                                    <h4 class="title">Worldwide Shipping</h4>
+                                    <p class="service-desc">Discover seamless global shipping, ensuring your satisfaction with every order.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-md-6 service-item">
+                            <div class="service-box service-box-2">
+                                <div class="service-box-content">
+                                    <h4 class="title">Online Support 24/7</h4>
+                                    <p class="service-desc">Count on our dedicated online support available 24/7 for assistance whenever you need it.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 hidden-md service-item">
+                            <div class="service-box service-box-2">
+                                <div class="service-box-content">
+                                    <h4 class="title">Money Return Guarantee</h4>
+                                    <p class="service-desc">Rest easy with our money-back guarantee for a worry-free shopping experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /. service -->
+                <!-- /. footer bottom -->
+            </div>
+
+        </div>
+        <!-- footer top -->
+
+        <div class="footer-bottom pt-77" style="background-color: #292929;">
+            <div class="container-1180">
+                <div class="footer-bottom-wrapper">
+                    <div class="footer-bottom-primary pb-60">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-5 col-md-9">
+                                <div class="footer-item has-desc">
+                                    <div class="footer-logo mb-25">
+                                          <h2 class="text-white" >Freakency</h2>
+                                    </div>
+                                    <div class="footer-desc">
+                                        <p class="mb-10"> Where Style Meets Expression. Unleash Your Fashion Identity with Every Stitch.
+                                        </p>
+                                    </div>
+                                    <div class="footer-img mt-65">
+                                        <img src="img/logo/paypal.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-7 col-md-12">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                                        <div class="footer-menu">
+                                            <ul>
+                                                <li><a href="javascript:void(0)" class="title">MY ACCOUNT</a></li>
+                                                <li><a href="/userEdit">My account</a></li>
+                                                <li><a href="/checkout">Checkout</a></li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                                        <div class="footer-menu">
+                                            <ul>
+                                                <li><a href="javascript:void(0)" class="title">Quick Links</a></li>
+                                               <li><a href="/shop">Shop</a></li>
+                                                <li><a href="/contact">contact</a></li>
+                                              
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<style>
+.button {
+  border-radius: 4px;
+  background-color: #000000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+  width: 40px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>

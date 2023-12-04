@@ -1,0 +1,94 @@
+
+
+<section>
+    <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container">
+
+                            <div class="col-12">
+
+    
+
+<h5 class=" container bg-dark text-light mt-5 text-center">USER DETAILS</h5>
+<body>
+  
+
+<div class="container mt-5 ">
+<table id="example" class="table table-striped text-dark">
+  <thead>
+    <tr>
+         <th scope="col">No</th>
+      <th scope="col">Reg Number</th>
+      <th scope="col"> Name</th>
+       <th scope="col">Mobile Number</th>
+      <th scope="col">Email</th>
+      <th style="text-align:center ;">Status</th>
+      <th style="text-align:center ;">Action</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {{#each user}}
+    <tr class="text-dark">
+        <td class="text-dark" >{{inc @index}}</td>
+      <td class="text-dark" scope="row">{{this._id}}</th>
+      <td class="text-dark" >{{this.Name}}</td>
+       <td class="text-dark">{{this.Mobile}}</td>
+      <td class="text-dark">{{this.Email}}</td>
+      
+      
+      <td>
+        {{#if this.block}}
+       <a href="/admin/unblock/{{this._id}}" class="btn btn-primary">Unblock</a>
+       {{else}}
+        <a href="/admin/block/{{this._id}}" class="btn btn-danger" >Block</a>
+{{/if}}
+      </td>
+      <td> <a href="/admin/delete-user/{{this._id}}"
+                        class="btn btn-danger"
+                        onclick3="return confirm('Are you sure want to delete {{this._id}}?')"
+                      >Delete</a></td>
+      
+    </tr>
+    {{/each}}
+  </tbody>
+  
+</table>
+</div></body>
+</div></div></div></div>
+</section>
+ 
+
+    
+ 
+  
+
+   
+
+            <!-- All JS is here -->
+           
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+           
+      
+           
+            
+            <script
+                src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+            <script
+                src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+           
+            
+  
+        <script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+
+   
+    
+   
+</script>
+   
+
+    

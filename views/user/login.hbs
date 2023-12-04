@@ -1,0 +1,55 @@
+<section class="vh-100" style="background-color: #d1c7c7;">
+   <div class="single-slider d-flex align-items-center h-950" data-background="img/bg/16.jpg">
+  <div class="container py-5 mt-100 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+        
+            <h3 class="mb-5">Login</h3>
+         <form action="/login" method="post">
+         <!-- user/login.hbs -->
+
+{{#if loginErr}}
+  <div class="alert alert-danger" role="alert">
+    {{loginErr}}
+  </div>
+{{/if}}
+
+            <div class="form-outline mb-4">
+              <input type="email" id="typeEmailX-2" name="Email" name="Mobile" class="form-control form-control-lg" />
+              <label class="form-label"  for="">Email Address/Mob</label>
+            </div>
+
+            <div class="form-outline mb-4">
+              <input type="password"name="Password" id="typePasswordX-2" class="form-control form-control-lg" />
+              <label class="form-label" for="typePasswordX-2">Password</label>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-start mb-4">
+              
+             <a href="/signup">Create new account?</a>
+            </div>
+<div class="form-check d-flex justify-content-start mb-4">
+              
+             <a href="/otp">
+          <h5 class=" text-success">Login with otp</h5></a>
+            </div>
+            <button class="btnz btn-primary btn-lg btn-block" type="submit">Login</button>
+            
+
+            </form>
+<div  class="btn  mt-3 col-md-12">
+
+     </div>
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

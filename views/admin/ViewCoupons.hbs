@@ -1,0 +1,111 @@
+
+            <!-- header section end-->
+ <div class="main-content">
+                <div class="page-content">
+                    <div class="container">
+                        <div class="row">
+            <div class="container-fluid">
+                <div class="page-head">
+                    <h4 class="mt-2 mb-2 text-dark">Coupon Details </h4>
+                </div>
+                <div class="edit-table">
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12">
+                            <div class="card m-b-30">
+                               
+
+                                        <table class="table" id="example">
+                                            <thead>
+                                                <tr>
+                                                    <th>S-No:</th>
+                                                    <th>Coupon-ID</th>
+                                                    <th>Coupon-name</th>
+                                                    <th>Expiry Date</th>
+                                                    <th>Percentage</th>
+                                                    <th>MIN Amount</th>
+                                                    <th>MAX Amount</th>
+                                                    <th>Status</th>
+                                                    {{!-- <th>Action</th> --}}
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    {{#each coupen}}
+                                                    <td>{{inc @index}}</td>
+                                                    <td>{{this.code}}</td>
+                                                    <td>{{this.name}}</td>
+                                                    <td>{{this.endingdate}}</td>
+                                                    <td>{{this.value}}</td>
+
+                                                    <td>{{this.minAmount}}</td>
+                                                     <td>{{this.maxAmount}}</td>
+
+                                                   <td>{{this.status}}</td>
+                                                     <td>
+
+                                                        {{!-- <div class="btn-group">
+                                                            <a href=""
+                                                                class="btn btn-dark  text-white  btn-rounded text-align-center mt-4 pt-3"
+                                                                data-placement="top" data-toggle="tooltip"
+                                                                data-original-title="DELETE">
+                                                                <p class="block">DELETE</p>
+                                                            </a>
+                                                            <a href=""
+                                                                class=" btn btn-outline-dark   text-dark btn-rounded text-align-center    mt-4 pt-3"
+                                                                data-placement="top" data-toggle="tooltip"
+                                                                data-original-title="UPDATE">
+                                                                <p class="unblock">UPDATE</p>
+                                                            </a>
+                                                        </div> --}}
+
+
+                                                    </td>
+                                                </tr>
+                                                {{/each}}
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end row-->
+                </div>
+   
+
+ 
+
+                               
+   
+
+            <!-- All JS is here -->
+           
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+           
+      
+           
+            
+            <script
+                src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+            <script
+                src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+           
+            
+  
+        <script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+
+   
+    
+   
+</script>
+   
